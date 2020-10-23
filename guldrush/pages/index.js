@@ -8,15 +8,15 @@ import Link from 'next/link';
 export default function Home({ prices }) {
   return (
     <div>
-    <Link href="/guldtackor/20-gram"> 
+    <Link href="/guld/20-gram"> 
       <a> 20! </a>
     </Link>
 
-    <Link href="/guldtackor/50-gram"> 
+    <Link href="/guld/50-gram"> 
       <a> 50! </a>
     </Link>
 
-     <Link href="/guldtackor/100-gram"> 
+     <Link href="/guld/100-gram"> 
       <a> 100! </a>
     </Link>
     </div>

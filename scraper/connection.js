@@ -1,9 +1,11 @@
 const { MongoClient } = require('mongodb'); 
-const getData = require('./scraper'); 
+const getProducts = require('./products'); 
 
 const uri = "mongodb+srv://alexander:zni2ev@cluster0.h5faa.mongodb.net/test?retryWrites=true&w=majority";
 
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, {
+  useUnifiedTopology: true
+});
 
 async function run() {
   
@@ -13,8 +15,8 @@ async function run() {
     const database = client.db('guldrush');
     const collection = database.collection('prices');
 
-    let prices = await getData()
-    const result = await collection.insertMany(prices);
+    let products = await getProducts()
+    const result = await collection.insertMany(products);
     console.log(result);
 
   } finally {

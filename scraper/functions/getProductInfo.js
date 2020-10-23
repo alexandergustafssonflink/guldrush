@@ -1,7 +1,8 @@
-   const puppeteer = require('puppeteer');
-   const processPrice = require('./processPrice.js'); 
-      const processProductName = require('./processProductName.js'); 
-   
+const puppeteer = require('puppeteer');
+const processPrice = require('./processPrice.js'); 
+const processProductName = require('./processProductName.js'); 
+process.setMaxListeners(0);
+
    async function getProductInfo (urlLink, 
    priceTag, 
    urlTag, 
@@ -21,7 +22,7 @@
         url: await page.$eval(urlTag, element => element.href), 
         name: processProductName(await page.$eval(nameTag,element => element.textContent)), 
         weight: weightInfo, 
-        type: typeInfo, 
+        metal: typeInfo, 
         company: companyTag, 
         date: dateInfo
 
