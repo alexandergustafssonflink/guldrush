@@ -5,25 +5,29 @@ import { useRouter } from 'next/router'
 
 export default function listOfGoldBars ({products}) {
   let latestDate = products[0].date; 
-  let sortedProducts = sortPrices(products[0], products[1], products[2])
+  // console.log(products);
+ let latestProducts = products.filter((p) => {
+    if(p.date == latestDate) {
+      return p; 
+    }
+  })
+
+  // let sortedProducts = sortPrices(products[0], products[1], products[2])
+let sortedProducts = latestProducts.sort(sortPrices);
+    console.log(sortedProducts);
    return (
      <div> 
      {sortedProducts.map((p, i) => {
-        if ( p.date == latestDate) {
         return (
           <div key={i}>
           <a href={p.url}> <h1>{p.company + ": " + p.price + "kr"} </h1>  </a>
           <h3>{ p.name }</h3>
           </div>
-        )
-        }
+        ) 
       })} 
       </div>
   );
 }
-
-
-
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();

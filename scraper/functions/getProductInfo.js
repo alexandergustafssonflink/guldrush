@@ -15,6 +15,7 @@ process.setMaxListeners(0);
         headless: true
   });
         const page = await browser.newPage();
+        await page.setDefaultNavigationTimeout(0); 
         await page.goto(urlLink);
 
         const productInfo = {
