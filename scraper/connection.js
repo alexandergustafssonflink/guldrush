@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb'); 
-const getProducts = require('./products'); 
+const getAllGoldBars = require('./goldBars'); 
 
 const uri = "mongodb+srv://alexander:zni2ev@cluster0.h5faa.mongodb.net/test?retryWrites=true&w=majority";
 
@@ -15,7 +15,7 @@ async function run() {
     const database = client.db('guldrush');
     const collection = database.collection('prices');
 
-    let products = await getProducts()
+    let products = await getAllGoldBars()
     const result = await collection.insertMany(products);
     console.log(result);
 
