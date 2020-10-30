@@ -26,6 +26,7 @@ async function run() {
   } finally {
 
     await client.close();
+    process.exit(); 
   }
 }
  run().catch(console.dir)
