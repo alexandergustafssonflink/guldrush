@@ -7,8 +7,9 @@ process.setMaxListeners(0);
 let currentDate = new Date(); 
 
  async function getSilverBarsLibertySilver ()
- {       const browser = await puppeteer.launch({
-        headless: true
+ {         const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
         const page = await browser.newPage();
 
@@ -57,8 +58,9 @@ let currentDate = new Date();
 
 async function getSilverBarsGuldC () {
 
-      const browser = await puppeteer.launch({
-        headless: true
+        const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
         const page = await browser.newPage();
 

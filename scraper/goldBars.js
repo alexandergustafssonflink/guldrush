@@ -11,7 +11,8 @@ let currentDate = new Date();
 /// LIBERTY SILVER
    async function getGoldBarsLibertySilver ()
  {       const browser = await puppeteer.launch({
-        headless: true
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
         const page = await browser.newPage();
 
@@ -61,8 +62,9 @@ let currentDate = new Date();
 /// GULDCENTRALEN
 async function getGoldBarsGuldC () {
 
-      const browser = await puppeteer.launch({
-        headless: true
+        const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
         const page = await browser.newPage();
 
