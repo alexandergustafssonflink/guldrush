@@ -59,6 +59,14 @@ let currentDate = new Date();
         await browser.close();
 } 
 
+async function test () {
+    let bars = await getGoldBarsLibertySilver();
+
+    console.log(bars);
+}
+
+test(); 
+
 /// GULDCENTRALEN
 async function getGoldBarsGuldC () {
 
