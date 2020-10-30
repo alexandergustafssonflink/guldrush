@@ -231,9 +231,9 @@ return tavexProducts;
     async function getAllGoldBars () {
         let libertyProducts = await getGoldBarsLibertySilver(); 
         let guldCProducts = await getGoldBarsGuldC(); 
-        let tavexProducts = await getGoldBarsTavex(); 
+        // let tavexProducts = await getGoldBarsTavex(); 
 
-        let products = libertyProducts.concat(guldCProducts, tavexProducts); 
+        let products = libertyProducts.concat(guldCProducts); 
       
         return products; 
     }
