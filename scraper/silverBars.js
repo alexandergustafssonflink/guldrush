@@ -102,18 +102,13 @@ async function getSilverBarsGuldC () {
         await browser.close();
 }
 
+  async function getAllSilverBars () {
+        let libertyProducts = await getSilverBarsLibertySilver(); 
+        let guldCProducts = await getSilverBarsGuldC(); 
 
+        let products = libertyProducts.concat(guldCProducts); 
+      
+        return products; 
+    }
 
-
-
-
-
-
-
-async function getProducts () {
-    let stuff = await getSilverBarsGuldC(); 
-    console.log(stuff);
-}
-
-
-getProducts(); 
+module.exports = getAllSilverBars; 

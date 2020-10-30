@@ -110,10 +110,7 @@ async function getSilverBarsGuldC () {
 
 
 
-async function getProducts () {
-    let stuff = await getSilverBarsGuldC(); 
-    console.log(stuff);
-}
-
-
-getProducts(); 
+// async function getProducts () {
+//     let stuff = await getSilverBarsGuldC(); 
+//     console.log(stuff);
+// }

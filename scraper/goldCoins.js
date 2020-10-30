@@ -9,14 +9,14 @@ let currentDate = new Date();
 
 
 /// LIBERTY SILVER
-   async function getGoldBarsLibertySilver ()
+   async function getGoldCoinsLibertySilver ()
  {       const browser = await puppeteer.launch({
         headless: true
   });
         const page = await browser.newPage();
 
         await page.setDefaultNavigationTimeout(0); 
-        await page.goto("https://www.libertysilver.se/kopa/guldtackor");
+        await page.goto("https://www.libertysilver.se/kopa/guldmynt");
 
         let allPrices = await page.evaluate(() => 
         Array.from(document.querySelectorAll(".productBox .productAddToCartBox tbody tr:nth-child(1) td:nth-child(2)"), 
@@ -35,7 +35,7 @@ let currentDate = new Date();
         e => e.innerText))
 
        let allWeightsTrimmed = allWeights.map((w) =>
-            Number(w.replace('gram', '').replace("Finvikt: ", '').split("  ")[0])
+            parseFloat(w.replace('gram', '').replace("Finvikt: ", '').replace(",", ".").split("  ")[0])
         )
 
         let products = []   
@@ -47,7 +47,7 @@ let currentDate = new Date();
                 url: allLinks[i],
                 name: allNames[i],
                 weight: allWeightsTrimmed[i], 
-                metal: "guld",
+                metal: "guldmynt",
                 company: "Liberty Silver",
                 date: currentDate
             })
@@ -57,6 +57,14 @@ let currentDate = new Date();
 
         await browser.close();
 } 
+
+async function test () {
+   let guldC = await getGoldCoinsLibertySilver()
+
+   console.log(guldC);
+}
+
+test(); 
 
 /// GULDCENTRALEN
 async function getGoldBarsGuldC () {
@@ -215,17 +223,17 @@ tavexProducts = [
     valcambi1000SilverBar
 ]
 return tavexProducts; 
-} 
+}
 
 
     async function getAllGoldBars () {
-        let libertyProducts = await getGoldBarsLibertySilver(); 
-        let guldCProducts = await getGoldBarsGuldC(); 
-        let tavexProducts = await getGoldBarsTavex(); 
+        let libertyProducts = await getGoldCoinsLibertySilver(); 
+        let guldCProducts = await getGoldCoinsGuldC(); 
+        let tavexProducts = await getGoldCoinsTavex(); 
 
         let products = libertyProducts.concat(guldCProducts, tavexProducts); 
       
         return products; 
     }
 
-    module.exports = getAllGoldBars; 
+    // module.exports = getAllGoldCoins; 
