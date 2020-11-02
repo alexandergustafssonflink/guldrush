@@ -1,24 +1,29 @@
 const puppeteer = require('puppeteer');
+const processPrice = require("./functions/processPrice"); 
+const processProductName = require("./functions/processProductName"); 
+const getProductInfo = require('./functions/testGetProductInfo'); 
 
+   let currentDate = "2020-11-01"; 
 
    async function testTavex () {
-    const browser = await puppeteer.launch({
-        headless: true
-  });
-        const page = await browser.newPage();
+    
+  
+   }
 
-        await page.setDefaultNavigationTimeout(0); 
-        await page.goto("https://tavex.se/guld/guldtackor/");
+    async function test () {
+   let guldC = await testTavex()
+
+   console.log(guldC);
+}
+
+test();
 
 
-    //    let allPrices = await page.evaluate(() => 
-    //     Array.from(document.querySelectorAll(".product__meta-box div:first-of-type span:nth-child(2)"), 
-    //     e => e.innerText));
 
-        let buyOrSell = await page.evaluate(() => 
-        document.querySelectorAll(".product__meta-box div:first-of-type span:first-of-type"))
+ // let buyOrSell = await page.evaluate(() => 
+        // document.querySelectorAll(".product__meta-box div:first-of-type span:first-of-type"))
 
-        return buyOrSell; 
+        // return buyOrSell; 
 
 //         let products = []   
 
@@ -36,16 +41,3 @@ const puppeteer = require('puppeteer');
 //             })
 //  }
 //             return products; 
-        
-        await browser.close();
-
-  
-   }
-
-    async function test () {
-   let guldC = await testTavex()
-
-   console.log(guldC);
-}
-
-test();

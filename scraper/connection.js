@@ -4,6 +4,7 @@ const getAllSilverBars = require('./silverBars');
 
 const uri = "mongodb+srv://alexander:zni2ev@cluster0.h5faa.mongodb.net/test?retryWrites=true&w=majority";
 
+
 const client = new MongoClient(uri, {
   useUnifiedTopology: true
 });
