@@ -6,17 +6,20 @@ const getProductInfo = require('./functions/testGetProductInfo');
    let currentDate = "2020-11-01"; 
 
    async function testTavex () {
-    
+       
   
    }
 
     async function test () {
-   let guldC = await testTavex()
+   let tavex = await testTavex()
 
-   console.log(guldC);
+   console.log(tavex);
 }
 
 test();
+
+
+
 
 
 
