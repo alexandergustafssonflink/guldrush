@@ -90,7 +90,7 @@ async function getGoldBarsGuldC () {
         Array.from(document.querySelectorAll(".prod .clearfix h2"), 
         e => e.innerText));
 
-        let allWeights = allNames.map((n) => getWeightOutOfName(n))
+        let allWeights = await allNames.map((n) => getWeightOutOfName(n))
 
         let allLinks = await page.evaluate(() => 
         Array.from(document.querySelectorAll(".prodcells a"), 
