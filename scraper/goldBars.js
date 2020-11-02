@@ -60,13 +60,6 @@ let currentDate = new Date();
         await browser.close();
 } 
 
-async function test () {
-    let bars = await getGoldBarsLibertySilver();
-
-    console.log(bars);
-}
-
-test(); 
 
 /// GULDCENTRALEN
 async function getGoldBarsGuldC () {
@@ -237,9 +230,9 @@ return tavexProducts;
     async function getAllGoldBars () {
         let libertyProducts = await getGoldBarsLibertySilver(); 
         let guldCProducts = await getGoldBarsGuldC(); 
-        let tavexProducts = await getGoldBarsTavex(); 
+        // let tavexProducts = await getGoldBarsTavex(); 
 
-        let products = libertyProducts.concat(guldCProducts, tavexProducts); 
+        let products = libertyProducts.concat(guldCProducts); 
       
         return products; 
     }
