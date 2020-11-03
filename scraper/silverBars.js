@@ -46,6 +46,7 @@ let currentDate = new Date();
                 name: allNames[i],
                 weight: allWeightsTrimmed[i], 
                 metal: "silver",
+                product: "silvertackor",
                 company: "Liberty Silver",
                 date: currentDate
             })
@@ -55,6 +56,43 @@ let currentDate = new Date();
 
         await browser.close();
 } 
+
+
+async function getSilverBarsTavex () {
+   const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+        const page = await browser.newPage();
+
+        await page.setDefaultNavigationTimeout(0); 
+        await page.goto("https://tavex.se/silver/silvertackor/");
+
+        let valcambi1000SilverBar = {
+            price: processPrice(await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.js-loader-target > div > div:nth-child(1) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from', element => element.textContent)), 
+            url: await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.js-loader-target > div > div:nth-child(1) > a', element => element.href), 
+            name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.js-loader-target > div > div:nth-child(1) > a > div > div > h3 > span",element => element.textContent)),
+            weight: 1000,
+            metal: "silver",
+            product: "silvertackor",
+            company: "Tavex",
+            date: currentDate
+        }
+
+        tavexProducts = [
+    
+ ]
+return tavexProducts; 
+
+ 
+
+       
+        
+        await browser.close();
+
+}
+
+
 
 async function getSilverBarsGuldC () {
 
@@ -93,6 +131,7 @@ async function getSilverBarsGuldC () {
                 name: allNames[i],
                 weight: allWeights[i],
                 metal: "silver",
+                product: "silvertackor",
                 company: "Guldcentralen",
                 date: currentDate
             })

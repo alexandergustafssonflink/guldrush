@@ -1,9 +1,12 @@
-import sortPrices from "../../functions/sortPrices"; 
-import { connectToDatabase } from '../../util/mongodb'
-import { useRouter } from 'next/router'
+import sortPrices from "../../../functions/sortPrices"; 
+import { connectToDatabase } from '../../../util/mongodb'
+import { useRouter } from 'next/router';
+// import styles from "./weight.module.css"; 
 
 
-export default function listOfGoldBars ({products}) {
+
+
+export default function listOfProductsByProduct ({products}) {
   let latestDate = products[0].date; 
   // console.log(products);
  let latestProducts = products.filter((p) => {
@@ -14,14 +17,13 @@ export default function listOfGoldBars ({products}) {
 
   // let sortedProducts = sortPrices(products[0], products[1], products[2])
 let sortedProducts = latestProducts.sort(sortPrices);
-    console.log(sortedProducts);
    return (
      <div> 
      {sortedProducts.map((p, i) => {
         return (
           <div key={i}>
-          <a href={p.url}> <h1>{p.company + ": " + p.price + "kr"} </h1>  </a>
-          <h3>{ p.name }</h3>
+          <a href={p.url}> <h3>{p.company + ": " + p.price + "kr"} </h3>  </a>
+          <p>{ p.name }</p>
           </div>
         ) 
       })} 
@@ -35,8 +37,7 @@ export async function getServerSideProps(context) {
   const products = await db
     .collection("prices")
     .find({
-      "weight": parseInt(context.params.weight),
-      "metal": context.params.metal
+      "product": context.params.product,
       })
     .sort({date: -1})
     .limit(20)

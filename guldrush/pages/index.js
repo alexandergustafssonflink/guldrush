@@ -1,23 +1,27 @@
 import Head from 'next/head'
 import { connectToDatabase } from '../util/mongodb'
 import sortPrices from "../functions/sortPrices"; 
-import GoldbarComparison from "../components/GoldbarComparison"
 import { useRouter } from 'next/router'; 
-import Link from 'next/link'; 
+import Link from 'next/link';
+import styles from "./index.module.css"; 
 
 export default function Home({ prices }) {
   return (
-    <div>
-    <Link href="/guld/20-gram"> 
-      <a> 20! </a>
+    <div className={styles.metalChoice}>
+    <Link href="/guldtackor"> 
+        <button className={styles.metalButton}> Guldtackor </button>
     </Link>
 
-    <Link href="/guld/50-gram"> 
-      <a> 50! </a>
+     <Link href="/silvertackor"> 
+        <button className={styles.metalButton}> Silvertackor </button>
     </Link>
 
-     <Link href="/guld/100-gram"> 
-      <a> 100! </a>
+      <Link href="/guldmynt"> 
+        <button className={styles.metalButton}> Guldmynt </button>
+    </Link>
+
+     <Link href="/silvermynt"> 
+        <button className={styles.metalButton}> Silvermynt </button>
     </Link>
     </div>
   )
@@ -30,6 +34,7 @@ export async function getServerSideProps() {
     .collection("prices")
     .find({})
     .sort({"Date":-1})
+    .limit(50)
     .toArray()
 
   return {

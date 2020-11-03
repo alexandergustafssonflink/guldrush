@@ -50,6 +50,7 @@ let currentDate = new Date();
                 name: allNames[i],
                 weight: allWeightsTrimmed[i], 
                 metal: "guld",
+                product: "guldtackor",
                 company: "Liberty Silver",
                 date: currentDate
             })
@@ -99,6 +100,7 @@ async function getGoldBarsGuldC () {
                 name: allNames[i],
                 weight: allWeights[i],
                 metal: "guld",
+                product: "guldtackor",
                 company: "Guldcentralen",
                 date: currentDate
             })
@@ -130,6 +132,7 @@ async function getGoldBarsTavex () {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(5) > a > div.product__meta > div > h3 > span",element => element.textContent)),
             weight: 100,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
         }
@@ -140,6 +143,7 @@ async function getGoldBarsTavex () {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(11) > a > div > div > h3 > span",element => element.textContent)),
             weight: 50,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
 }
@@ -150,6 +154,7 @@ let pamp20GoldBar = {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(15) > a > div > div > h3 > span",element => element.textContent)),
             weight: 20,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
 }
@@ -160,6 +165,7 @@ let valcambi100GoldBar = {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a > div > div > h3 > span",element => element.textContent)),
             weight: 100,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
 }
@@ -171,6 +177,7 @@ let valcambiSuisse50GoldBar = {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(10) > a > div > div > h3 > span",element => element.textContent)),
             weight: 50,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
    }
@@ -182,6 +189,7 @@ let pampFortuna100GoldBar = {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(8) > a > div > div > h3 > span",element => element.textContent)),
             weight: 100,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
 }
@@ -192,6 +200,7 @@ let valcambiSuisse20GoldBar = {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(14) > a > div > div > h3 > span",element => element.textContent)),
             weight: 20,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
 }
@@ -202,6 +211,7 @@ let valcambiSuisse5GoldBar = {
             name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(18) > a > div > div > h3 > span",element => element.textContent)),
             weight: 5,
             metal: "guld",
+            product: "guldtackor",
             company: "Tavex",
             date: currentDate
 }
