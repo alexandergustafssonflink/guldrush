@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const getWeightOutOfName = require('./functions/getWeightOutOfName.js');
-const processPrice = require('./functions/processPrice')
+const processPrice = require('./functions/processPrice');
+const processProductName = require('./functions/processProductName')
 const getProductInfo = require('./functions/getProductInfo.js');
 process.setMaxListeners(0);
 
@@ -11,7 +12,8 @@ let currentDate = new Date();
 /// LIBERTY SILVER
    async function getGoldCoinsLibertySilver ()
  {       const browser = await puppeteer.launch({
-        headless: true
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
         const page = await browser.newPage();
 
@@ -47,7 +49,8 @@ let currentDate = new Date();
                 url: allLinks[i],
                 name: allNames[i],
                 weight: allWeightsTrimmed[i], 
-                metal: "guldmynt",
+                metal: "guld",
+                product: "guldmynt", 
                 company: "Liberty Silver",
                 date: currentDate
             })
@@ -58,175 +61,105 @@ let currentDate = new Date();
         await browser.close();
 } 
 
-async function test () {
-   let guldC = await getGoldCoinsLibertySilver()
 
-   console.log(guldC);
-}
-
-test(); 
 
 /// GULDCENTRALEN
-async function getGoldBarsGuldC () {
-
-      const browser = await puppeteer.launch({
-        headless: true
+async function getGoldCoinsGuldC () {
+   const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
         const page = await browser.newPage();
 
         await page.setDefaultNavigationTimeout(0); 
         await page.goto("https://www.guldcentralen.se/guld-kop-och-salj");
 
-        let allPrices = await page.evaluate(() => 
-        Array.from(document.querySelectorAll(".prod .clearfix p"), 
-        e => e.innerText));
-
-        allPrices = await allPrices.map((p) => processPrice(p))
-
-        let allNames = await page.evaluate(() => 
-        Array.from(document.querySelectorAll(".prod .clearfix h2"), 
-        e => e.innerText));
-
-        let allWeights = allNames.map((n) => getWeightOutOfName(n))
-
-        let allLinks = await page.evaluate(() => 
-        Array.from(document.querySelectorAll(".prodcells a"), 
-        e => e.href)); 
-
-        let products = []   
-
-        for (i = 0; i < allNames.length; i++) {
-        products.push(
-            {
-                price: allPrices[i],
-                url: allLinks[i],
-                name: allNames[i],
-                weight: allWeights[i],
-                metal: "guld",
-                company: "Guldcentralen",
-                date: currentDate
-            })
-        
+        let canadaianMaple1GoldCoin = {
+            price: processPrice(await page.$eval('body > div.l-table.container > div.l-table__col.l-table__col--bigger > div > a:nth-child(13) > figure > figcaption > p > span', element => element.textContent)), 
+            url: await page.$eval('body > div.l-table.container > div.l-table__col.l-table__col--bigger > div > a:nth-child(13)', element => element.href), 
+            name: processProductName(await page.$eval("body > div.l-table.container > div.l-table__col.l-table__col--bigger > div > a:nth-child(13) > figure > figcaption > h2",element => element.textContent)),
+            weight: 1,
+            metal: "guld",
+            product: "guldmynt",
+            company: "Guldcentralen",
+            date: currentDate
         }
 
-        return products; 
-        
+guldCProducts = [
+    canadaianMaple1GoldCoin
+ 
+ ]
+return guldCProducts; 
+
         await browser.close();
+
 }
 
 
 
 
 // TAVEX
-async function getGoldBarsTavex () {
-let pamp100GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(8) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(5) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(5) > a > div.product__meta > div > h3 > span',
-            100,
-            "guld",
-            "Tavex",
-            currentDate
-)
+async function getGoldCoinsTavex () {
+   const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+        const page = await browser.newPage();
 
-let pamp50GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(11) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(11) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(11) > a > div > div > h3 > span',
-            50,
-            "guld",
-            "Tavex",
-            currentDate
-)
+        await page.setDefaultNavigationTimeout(0); 
+        await page.goto("https://tavex.se/guld/guldmynt/");
 
-let pamp20GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(15) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(15) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(15) > a > div > div > h3 > span',
-            20,
-            "guld",
-            "Tavex",
-            currentDate
-)
+        let austria1ozGoldCoin = {
+            price: processPrice(await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(1) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from', element => element.textContent)), 
+            url: await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(1) > a', element => element.href), 
+            name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(1) > a > div > div > h3 > span",element => element.textContent)),
+            weight: 31.5,
+            metal: "guld",
+            product: "guldmynt",
+            company: "Tavex",
+            date: currentDate
+        }
 
-let valcambi100GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a > div > div > h3 > span',
-            100,
-            "guld",
-            "Tavex",
-            currentDate
-)
+        let australia1ozKangarooGoldCoin = {
+            price: processPrice(await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from', element => element.textContent)), 
+            url: await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a', element => element.href), 
+            name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(2) > a > div > div > h3 > span",element => element.textContent)),
+            weight: 31.5,
+            metal: "guld",
+            product: "guldmynt",
+            company: "Tavex",
+            date: currentDate
+        }
 
 
-let valcambiSuisse50GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(10) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(10) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(10) > a > div > div > h3 > span',
-            50,
-            "guld",
-            "Tavex",
-            currentDate
-)
-
-
-let pampFortuna100GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(8) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(8) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(8) > a > div > div > h3 > span',
-            100,
-            "guld",
-            "Tavex",
-            currentDate
-)
-
-let valcambiSuisse20GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(14) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(14) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(14) > a > div > div > h3 > span',
-            20,
-            "guld",
-            "Tavex",
-            currentDate
-)
-let valcambiSuisse5GoldBar = await getProductInfo('https://tavex.se/guld/guldtackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(18) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(18) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(18) > a > div > div > h3 > span',
-            5,
-            "guld",
-            "Tavex",
-            currentDate
-)
-
-
-let valcambi1000SilverBar = await getProductInfo('https://tavex.se/silver/silvertackor/',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.js-loader-target > div > div:nth-child(1) > a > div > div > div.product__price.product__price--single > span.product__price-value.h-price-flash.js-product-price-from',
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.js-loader-target > div > div:nth-child(1) > a', 
-            'body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.js-loader-target > div > div:nth-child(1) > a > div > div > h3 > span',
-            1000,
-            "silver",
-            "Tavex",
-            currentDate
-)
+        let australia1ozLunarGoldCoin = {
+            price: processPrice(await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(3) > a > div.product__meta > div > div:nth-child(2) > span.product__price-value.h-price-flash.js-product-price-from', element => element.textContent)), 
+            url: await page.$eval('body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(3) > a', element => element.href), 
+            name: processProductName(await page.$eval("body > div.h-canvas > div.v-category.js-list-modifier > div.h-container > div > div.grid__col--md-9.v-category__body.js-product-archive-results > div.v-category__content.has-pagination.js-loader-target > div.grid.grid--narrow-xs.grid--equalheight > div:nth-child(3) > a > div.product__meta > div > h3 > span",element => element.textContent)),
+            weight: 31.5,
+            metal: "guld",
+            product: "guldmynt",
+            company: "Tavex",
+            date: currentDate
+        }
+        
 
 tavexProducts = [
-    pamp100GoldBar,
-    pamp50GoldBar,
-    pamp20GoldBar,
-    valcambi100GoldBar,
-    valcambiSuisse50GoldBar,
-    pampFortuna100GoldBar,
-    valcambiSuisse20GoldBar,
-    valcambiSuisse5GoldBar,
-    valcambi1000SilverBar
-]
+    austria1ozGoldCoin,
+    australia1ozKangarooGoldCoin, 
+    australia1ozLunarGoldCoin
+ 
+ ]
+
 return tavexProducts; 
+        await browser.close();
+
 }
 
 
-    async function getAllGoldBars () {
+
+
+    async function getAllGoldCoins () {
         let libertyProducts = await getGoldCoinsLibertySilver(); 
         let guldCProducts = await getGoldCoinsGuldC(); 
         let tavexProducts = await getGoldCoinsTavex(); 
@@ -235,5 +168,5 @@ return tavexProducts;
       
         return products; 
     }
-
-    // module.exports = getAllGoldCoins; 
+    
+module.exports = getAllGoldCoins; 

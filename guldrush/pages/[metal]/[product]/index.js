@@ -40,7 +40,7 @@ export async function getServerSideProps(context) {
       "product": context.params.product,
       })
     .sort({date: -1})
-    .limit(20)
+    .limit(200)
     .toArray()
 
   return {

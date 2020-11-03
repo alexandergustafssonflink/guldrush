@@ -1,7 +1,8 @@
 const { MongoClient } = require('mongodb'); 
 const getAllGoldBars = require('./goldBars'); 
 const getAllSilverBars = require('./silverBars'); 
-
+const getAllGoldCoins = require("./goldCoins")
+const getAllSilverCoins = require("./silverCoins")
 const uri = "mongodb+srv://alexander:zni2ev@cluster0.h5faa.mongodb.net/test?retryWrites=true&w=majority";
 
 
@@ -17,12 +18,17 @@ async function run() {
     const database = client.db('guldrush');
     const collection = database.collection('prices');
 
-    let goldBars = await getAllGoldBars()
+    let goldBars = await getAllGoldBars(); 
+    let goldCoins = await getAllGoldCoins();
     let silverBars = await getAllSilverBars(); 
+    let silverCoins = await getAllSilverCoins(); 
     const resultGold = await collection.insertMany(goldBars);
+    const resultGoldCoins = await collection.insertMany(goldCoins);
     const resultSilver = await collection.insertMany(silverBars);
+    const resultSilverCoins = await collection.insertMany(silverCoins);
 
-    console.log(resultGold);
+
+    console.log("DONE!");
 
   } finally {
 
