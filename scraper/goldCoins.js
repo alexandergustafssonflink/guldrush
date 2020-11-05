@@ -6,10 +6,9 @@ const getProductInfo = require("./functions/getProductInfo.js");
 process.setMaxListeners(0);
 
 let products = [];
-let currentDate = new Date();
 
 /// LIBERTY SILVER
-async function getGoldCoinsLibertySilver() {
+async function getGoldCoinsLibertySilver(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -81,7 +80,7 @@ async function getGoldCoinsLibertySilver() {
 }
 
 /// GULDCENTRALEN
-async function getGoldCoinsGuldC() {
+async function getGoldCoinsGuldC(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -121,7 +120,7 @@ async function getGoldCoinsGuldC() {
   await browser.close();
 }
 
-async function getGoldCoinsTavex() {
+async function getGoldCoinsTavex(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -287,10 +286,10 @@ async function getGoldCoinsTavex() {
 
 // }
 
-async function getAllGoldCoins() {
-  let libertyProducts = await getGoldCoinsLibertySilver();
-  let guldCProducts = await getGoldCoinsGuldC();
-  let tavexProducts = await getGoldCoinsTavex();
+async function getAllGoldCoins(currentDate) {
+  let libertyProducts = await getGoldCoinsLibertySilver(currentDate);
+  let guldCProducts = await getGoldCoinsGuldC(currentDate);
+  let tavexProducts = await getGoldCoinsTavex(currentDate);
 
   let products = libertyProducts.concat(guldCProducts, tavexProducts);
 

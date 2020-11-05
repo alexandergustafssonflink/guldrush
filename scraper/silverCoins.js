@@ -6,10 +6,9 @@ const getProductInfo = require("./functions/getProductInfo.js");
 process.setMaxListeners(0);
 
 let products = [];
-let currentDate = new Date();
 
 /// LIBERTY SILVER
-async function getSilverCoinsLibertySilver() {
+async function getSilverCoinsLibertySilver(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -80,7 +79,7 @@ async function getSilverCoinsLibertySilver() {
   await browser.close();
 }
 
-async function getSilverCoinsTavex() {
+async function getSilverCoinsTavex(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -190,9 +189,9 @@ async function getSilverCoinsTavex() {
   await browser.close();
 }
 
-async function getAllSilverCoins() {
-  let libertyProducts = await getSilverCoinsLibertySilver();
-  let tavexProducts = await getSilverCoinsTavex();
+async function getAllSilverCoins(currentDate) {
+  let libertyProducts = await getSilverCoinsLibertySilver(currentDate);
+  let tavexProducts = await getSilverCoinsTavex(currentDate);
 
   let products = libertyProducts.concat(tavexProducts);
 
