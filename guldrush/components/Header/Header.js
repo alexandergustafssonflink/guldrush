@@ -1,13 +1,10 @@
-import styles from "./header.module.css"
+import styles from "./header.module.css";
 
 const Header = () => {
-
   return (
-      <div className={styles.mainHeader}>
-       <h1> Guldrush.se </h1>
-      </div>
-      
-   
+    <div className={styles.mainHeader}>
+      <h1> Guldrush.se </h1>
+    </div>
   );
 };
 
