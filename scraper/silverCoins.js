@@ -27,6 +27,11 @@ async function getSilverCoinsLibertySilver(currentDate) {
     )
   );
 
+  let allPricesWithVat = allPrices.map((price) => {
+    let newPrice = price * 1.25;
+    return parseInt(newPrice);
+  });
+
   let allNames = await page.evaluate(() =>
     Array.from(
       document.querySelectorAll(".productBox .productInfoBox h2"),
@@ -78,6 +83,13 @@ async function getSilverCoinsLibertySilver(currentDate) {
 
   await browser.close();
 }
+
+// async function test() {
+//   let test = await getSilverCoinsLibertySilver();
+//   console.log(test);
+// }
+
+// test();
 
 async function getSilverCoinsTavex(currentDate) {
   const browser = await puppeteer.launch({
