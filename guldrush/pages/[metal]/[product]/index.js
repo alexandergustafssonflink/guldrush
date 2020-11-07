@@ -33,6 +33,20 @@ export default function listOfProductsByProduct({ products }) {
         <ListProducts products={sortedProducts} />
       </>
     );
+  } else if (router.asPath == "/silver/silvermynt") {
+    return (
+      <>
+        <Layout />
+        <ListProducts products={sortedProducts} />
+      </>
+    );
+  } else if (router.asPath == "/guld/guldmynt") {
+    return (
+      <>
+        <Layout />
+        <ListProducts products={sortedProducts} />
+      </>
+    );
   }
 }
 

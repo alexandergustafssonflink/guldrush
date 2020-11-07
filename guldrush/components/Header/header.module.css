@@ -3,3 +3,7 @@
   margin-left: 15px;
   margin-top: 5px;
 }
+.homeLink {
+  text-decoration: none;
+  color: black;
+}

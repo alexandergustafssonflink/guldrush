@@ -84,6 +84,8 @@ async function getGoldBarsGuldC(currentDate) {
   await page.setDefaultNavigationTimeout(0);
   await page.goto("https://www.guldcentralen.se/guld-kop-och-salj");
 
+  await page.waitForSelector(".prod .clearfix p");
+
   let allPrices = await page.evaluate(() =>
     Array.from(
       document.querySelectorAll(".prod .clearfix p"),
