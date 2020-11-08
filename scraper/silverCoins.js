@@ -32,7 +32,7 @@ async function getSilverCoinsLibertySilver(currentDate) {
     let newestPrice = Number(newPrice);
     let newerPrice = newestPrice * 2;
     let newestPrice2 = Math.round(newerPrice);
-    return newestPrice2 / 2;
+    return Math.round(newestPrice2 / 2);
   });
 
   let allNames = await page.evaluate(() =>
