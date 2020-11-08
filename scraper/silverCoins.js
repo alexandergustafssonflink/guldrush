@@ -69,7 +69,7 @@ async function getSilverCoinsLibertySilver(currentDate) {
 
   for (i = 0; i < allNames.length; i++) {
     products.push({
-      price: allPrices[i],
+      price: allPricesWithVat[i],
       url: allLinks[i],
       name: allNames[i],
       weight: allWeightsTrimmed[i],

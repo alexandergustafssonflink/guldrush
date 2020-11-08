@@ -22,6 +22,7 @@ async function run() {
     let goldCoins = await getAllGoldCoins(currentDate);
     let silverBars = await getAllSilverBars(currentDate);
     let silverCoins = await getAllSilverCoins(currentDate);
+
     const resultGold = await collection.insertMany(goldBars);
     const resultGoldCoins = await collection.insertMany(goldCoins);
     const resultSilver = await collection.insertMany(silverBars);
