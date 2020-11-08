@@ -29,10 +29,8 @@ async function getSilverCoinsLibertySilver(currentDate) {
 
   let allPricesWithVat = allPrices.map((price) => {
     let newPrice = price * 1.25;
-    let newestPrice = Number(newPrice);
-    let newerPrice = newestPrice * 2;
-    let newestPrice2 = Math.round(newerPrice);
-    return Math.round(newestPrice2 / 2);
+
+    return newPrice;
   });
 
   let allNames = await page.evaluate(() =>
