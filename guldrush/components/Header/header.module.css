@@ -1,14 +1,12 @@
 .mainHeader {
   margin-top: 10px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .mainHeader a {
   display: flex;
   justify-content: center;
-}
-
-.logo {
-  width: 100%;
 }
 
 @media only screen and (min-width: 800px) {

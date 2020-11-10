@@ -2,11 +2,13 @@ import styles from "./header.module.css";
 
 const Header = () => {
   return (
-    <div className={styles.mainHeader}>
-      <a className={styles.homeLink} href="/">
-        <img className={styles.logo} src="/images/logo.png" alt="logo" />
-      </a>
-    </div>
+    <a className={styles.homeLink} href="/">
+      <div className={styles.mainHeader}>
+        <div className={styles.imgWrapper}>
+          <img className={styles.logo} src="/images/logo.png" alt="logo" />
+        </div>
+      </div>
+    </a>
   );
 };
 
