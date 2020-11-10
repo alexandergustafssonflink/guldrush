@@ -1,44 +1,185 @@
 .metalChoice {
   margin-left: 15px;
   margin-right: 15px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
-.metalChoice .smallButtons {
-  height: 250px;
-  display: flex;
-  justify-content: space-between;
-  align-items: space-between;
-  flex-wrap: wrap;
+
+.headerCompare {
+  border-bottom: solid black 1px;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 .metalChoice h1 {
   font-family: var(--secondary-font);
   font-size: var(--mobile-header);
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 15px;
+}
+
+.upper .metalButton {
+  color: var(--gold);
+  background-color: var(--blue);
+}
+
+.lower {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lower .metalButton {
+  background-color: var(--beige);
 }
 
 .metalButton {
-  background: none;
-  color: inherit;
-  border: solid black;
   width: 49%;
-  height: 110px;
+  height: 150px;
   cursor: pointer;
-  outline: inherit;
   font-size: 18px;
   font-family: var(--primary-font);
-  background-color: #ebcf65;
+  box-shadow: gray 0px 4px 4px 0px;
+  border: none;
+}
+
+.bigButtons {
+  margin-top: 30px;
 }
 
 .bigButton {
-  background-color: #ebcf65;
   color: inherit;
-  border: solid black;
   width: 100%;
-  height: 50px;
+  height: 95px;
   cursor: pointer;
-  outline: inherit;
+  border: none;
+
   font-size: 18px;
   font-family: var(--primary-font);
   margin-bottom: 15px;
+}
+
+.yellowBanner {
+  width: 100%;
+}
+
+.bigButton h3 {
+  position: relative;
+  top: -60px;
+  font-size: 18px;
+}
+
+.beigeBanner {
+  width: 100%;
+}
+
+.investSection {
+  margin-top: 30px;
+}
+
+.investHeader {
+  border-bottom: solid black 1px;
+}
+
+.investHeader h1 {
+  padding-bottom: 5px;
+}
+.investImage {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.investText {
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: var(--secondary-font);
+}
+
+.readMore {
+  margin-top: 15px;
+  display: flex;
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+  position: relative;
+  left: 73%;
+}
+.readMore p {
+  font-family: var(--primary-font);
+  font-size: 16px;
+}
+.rightArrow {
+  width: 20px;
+}
+
+@media only screen and (min-width: 800px) {
+  .main {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 900px;
+    background-color: #f3f1f1;
+  }
+
+  .headerCompare {
+    border-bottom: solid black 1px;
+    width: 50%;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+
+  .smallButtons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .upper {
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .lower {
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .metalButton {
+    width: 45%;
+  }
+
+  .yellowBanner {
+    height: 100px;
+  }
+  .bigButton {
+    margin-bottom: 50px;
+  }
+
+  .investHeader {
+    width: 50%;
+    border-bottom: solid 2px black;
+    margin-bottom: 30px;
+  }
+
+  .investImgDiv {
+    margin-bottom: 30px;
+  }
+  .investImage {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .investText {
+    margin-bottom: 15px;
+  }
+
+  .readMore {
+    padding-bottom: 50px;
+    position: relative;
+    left: 90%;
+  }
 }

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className={styles.mainHeader}>
       <a className={styles.homeLink} href="/">
-        <h1> Guldrush.se </h1>
+        <img className={styles.logo} src="/images/logo.png" alt="logo" />
       </a>
     </div>
   );

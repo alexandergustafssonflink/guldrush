@@ -9,8 +9,8 @@ const ListProducts = ({ products }) => {
             <a className={styles.link} href={p.url} key={i}>
               <li className={styles.product}>
                 <div>
-                  <h3>{p.name} </h3>
-                  <p>{p.company}</p>
+                  <h3 className={styles.nameTag}>{p.name} </h3>
+                  <p className={styles.companyTag}>{p.company}</p>
                 </div>
                 <div>
                   <h3 className={styles.priceTag}>{p.price + ":-"}</h3>

@@ -8,14 +8,14 @@
 .radiowrapper {
   background: none;
   color: inherit;
-  border: solid black;
+  border: solid 1px black;
   width: 100%;
   height: 70px;
   cursor: pointer;
   outline: inherit;
-  font-size: 18px;
+  font-size: 16px;
   font-family: var(--primary-font);
-  background-color: #d89e52;
+  background-color: var(--beige);
 }
 
 .radio {
@@ -34,8 +34,8 @@
   font-size: 18px;
   padding: 10px;
   /* margin-top: 10px; */
-  background: #d89e52;
-  border: solid black;
+  background: var(--beige);
+  border: solid 1px black;
 }
 
 .radiocontent a {

@@ -32,3 +32,15 @@
   text-decoration: none;
   color: black;
 }
+
+@media only screen and (min-width: 800px) {
+  .main {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    max-width: 900px;
+    background-color: #f3f1f1;
+  }
+}

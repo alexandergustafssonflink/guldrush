@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import Link from "next/link";
 import Layout from "../../components/Layout/Layout.js";
+import Footer from "../../components/Footer/Footer.js";
 import ListProducts from "../../components/ListProducts/ListProducts.js";
 
 export default function metal({ products }) {
@@ -19,32 +20,58 @@ export default function metal({ products }) {
   if (router.asPath == "/guld") {
     return (
       <>
-        <Layout />
-        <div className={styles.buttonSection}>
-          <Link href="/guld/guldmynt">
-            <button className={styles.metalButton}> Guldmynt </button>
-          </Link>
-          <Link href="/guld/guldtackor">
-            <button className={styles.metalButton}> Guldtackor </button>
-          </Link>
+        <div className={styles.main}>
+          <Layout />
+          <div className={styles.buttonSection}>
+            <Link href="/guld/guldmynt">
+              <button className={styles.metalButton}> Guldmynt </button>
+            </Link>
+            <Link href="/guld/guldtackor">
+              <button className={styles.metalButton}> Guldtackor </button>
+            </Link>
+          </div>
+          <div className={styles.productsHeader}>
+            <h1> Alla produkter </h1>
+          </div>
+          <ListProducts products={sortedProducts} />
         </div>
-        <ListProducts products={sortedProducts} />
+        <Footer />
       </>
     );
   } else if (router.asPath == "/silver") {
     return (
       <>
-        <Layout />
-        <div className={styles.buttonSection}>
-          <Link href="/silver/silvermynt">
-            <button className={styles.metalButton}> Silvermynt </button>
-          </Link>
-          <Link href="/silver/silvertackor">
-            <button className={styles.metalButton}> Silvertackor </button>
-          </Link>
+        <div className={styles.main}>
+          <Layout />
+          <div className={styles.buttonSection}>
+            <Link href="silver/silvermynt">
+              <button className={styles.metalButton}> Silvermynt </button>
+            </Link>
+            <Link href="/silver/silvertackor">
+              <button className={styles.metalButton}> Silvertackor </button>
+            </Link>
+          </div>
+          <div className={styles.productsHeader}>
+            <h1> Alla produkter </h1>
+          </div>
+          <ListProducts products={sortedProducts} />
         </div>
-        <ListProducts products={sortedProducts} />
+        <Footer />
       </>
+      // <>
+      //   <div className={styles.main}>
+      //     <Layout />
+      //     <div className={styles.buttonSection}>
+      //       <Link href="/silver/silvermynt">
+      //         <button className={styles.metalButton}> Silvermynt </button>
+      //       </Link>
+      //       <Link href="/silver/silvertackor">
+      //         <button className={styles.metalButton}> Silvertackor </button>
+      //       </Link>
+      //     </div>
+      //   </div>
+      //   <ListProducts products={sortedProducts} />
+      // </>
     );
   }
 }

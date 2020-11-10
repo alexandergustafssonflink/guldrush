@@ -6,6 +6,7 @@ import Layout from "../../../../components/Layout/Layout.js";
 import ListProducts from "../../../../components/ListProducts/ListProducts.js";
 import SelectMenu from "../../../../components/SelectMenu/SelectMenu.js";
 import SelectMenuSilver from "../../../../components/SelectMenuSilver/SelectMenuSilver.js";
+import Footer from "../../../../components/Footer/Footer.js";
 
 export default function listOfProductsByWeight({ products }) {
   let latestDate = products[0].date;
@@ -21,17 +22,23 @@ export default function listOfProductsByWeight({ products }) {
   if (router.asPath.includes("/guld/guldtackor")) {
     return (
       <>
-        <Layout />
-        <SelectMenu />
-        <ListProducts products={sortedProducts} />
+        <div className={styles.main}>
+          <Layout />
+          <SelectMenu />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
       </>
     );
   } else if (router.asPath.includes("/silver/silvertackor")) {
     return (
       <>
-        <Layout />
-        <SelectMenuSilver />
-        <ListProducts products={sortedProducts} />
+        <div className={styles.main}>
+          <Layout />
+          <SelectMenuSilver />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
       </>
     );
   }

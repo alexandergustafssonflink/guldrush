@@ -6,6 +6,7 @@ import styles from "./index.module.css";
 import ListProducts from "../../../components/ListProducts/ListProducts.js";
 import SelectMenu from "../../../components/SelectMenu/SelectMenu.js";
 import SelectMenuSilver from "../../../components/SelectMenuSilver/SelectMenuSilver.js";
+import Footer from "../../../components/Footer/Footer.js";
 
 export default function listOfProductsByProduct({ products }) {
   let latestDate = products[0].date;
@@ -20,31 +21,43 @@ export default function listOfProductsByProduct({ products }) {
   if (router.asPath == "/guld/guldtackor") {
     return (
       <>
-        <Layout />
-        <SelectMenu />
-        <ListProducts products={sortedProducts} />
+        <div className={styles.main}>
+          <Layout />
+          <SelectMenu />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
       </>
     );
   } else if (router.asPath == "/silver/silvertackor") {
     return (
       <>
-        <Layout />
-        <SelectMenuSilver />
-        <ListProducts products={sortedProducts} />
+        <div className={styles.main}>
+          <Layout />
+          <SelectMenuSilver />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
       </>
     );
   } else if (router.asPath == "/silver/silvermynt") {
     return (
       <>
-        <Layout />
-        <ListProducts products={sortedProducts} />
+        <div className={styles.main}>
+          <Layout />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
       </>
     );
   } else if (router.asPath == "/guld/guldmynt") {
     return (
       <>
-        <Layout />
-        <ListProducts products={sortedProducts} />
+        <div className={styles.main}>
+          <Layout />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
       </>
     );
   }
