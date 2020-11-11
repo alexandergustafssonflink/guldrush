@@ -13,6 +13,10 @@ const Layout = () => {
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
         </Head>
         <Header />
       </>
