@@ -12,7 +12,6 @@ export default function Home({ prices }) {
     <>
       <div className={styles.main}>
         <Layout />
-
         <div className={styles.metalChoice}>
           <div className={styles.headerCompare}>
             <h1> Jämför priser på: </h1>

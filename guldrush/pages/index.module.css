@@ -115,13 +115,14 @@
   width: 20px;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .main {
     margin-left: 200px;
     margin-right: 200px;
     padding-left: 100px;
     padding-right: 100px;
-    max-width: 900px;
+    max-width: 1200px;
+    min-width: 1000px;
     background-color: #f3f1f1;
   }
 
@@ -149,6 +150,17 @@
   }
   .metalButton {
     width: 45%;
+    transition: 0.5s ease;
+  }
+
+  .upper .metalButton:hover {
+    background-color: var(--gold);
+    color: var(--blue);
+  }
+
+  .lower .metalButton:hover {
+    background-color: black;
+    color: var(--beige);
   }
 
   .yellowBanner {

@@ -58,20 +58,6 @@ export default function metal({ products }) {
         </div>
         <Footer />
       </>
-      // <>
-      //   <div className={styles.main}>
-      //     <Layout />
-      //     <div className={styles.buttonSection}>
-      //       <Link href="/silver/silvermynt">
-      //         <button className={styles.metalButton}> Silvermynt </button>
-      //       </Link>
-      //       <Link href="/silver/silvertackor">
-      //         <button className={styles.metalButton}> Silvertackor </button>
-      //       </Link>
-      //     </div>
-      //   </div>
-      //   <ListProducts products={sortedProducts} />
-      // </>
     );
   }
 }

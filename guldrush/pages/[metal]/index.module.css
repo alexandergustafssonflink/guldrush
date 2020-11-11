@@ -1,8 +1,3 @@
-.main {
-  margin-left: 200px;
-  margin-right: 200px;
-}
-
 .buttonSection {
   margin-left: 15px;
   margin-right: 15px;
@@ -35,8 +30,6 @@
 }
 
 .main {
-  margin-left: 15px;
-  margin-right: 15px;
   margin-top: 15px;
 }
 
@@ -69,14 +62,16 @@
   color: black;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .main {
     margin-left: 200px;
     margin-right: 200px;
+    margin-top: 0px;
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 30px;
-    max-width: 900px;
+    max-width: 1200px;
+    min-width: 1000px;
     background-color: #f3f1f1;
   }
 
