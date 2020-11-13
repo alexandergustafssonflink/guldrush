@@ -35,7 +35,3 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
-// setInterval(() => {
-
-// }, 15 * 60 * 1000);

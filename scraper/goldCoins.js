@@ -232,26 +232,26 @@ async function getGoldCoinsTavex(currentDate) {
     });
   }
 
-  return allWeights;
+  return products;
 
   await browser.close();
 }
 
-async function test() {
-  let testing = await getGoldCoinsTavex();
-  console.log(testing);
-}
+// async function test() {
+//   let testing = await getGoldCoinsTavex();
+//   console.log(testing);
+// }
 
-test();
+// test();
 
 async function getAllGoldCoins(currentDate) {
   let libertyProducts = await getGoldCoinsLibertySilver(currentDate);
   let guldCProducts = await getGoldCoinsGuldC(currentDate);
-  let tavexProducts = await getGoldCoinsTavex(currentDate);
+  // let tavexProducts = await getGoldCoinsTavex(currentDate);
 
-  let products = libertyProducts.concat(guldCProducts, tavexProducts);
+  let products = libertyProducts.concat(guldCProducts);
 
   return products;
 }
 
-// module.exports = getAllGoldCoins;
+module.exports = getAllGoldCoins;
