@@ -42,4 +42,11 @@
   text-decoration: none;
   color: black;
   padding: 10px 0;
+  transition: 0.5s ease;
+  padding: 5px;
+}
+
+.radiocontent a:hover {
+  background-color: black;
+  color: var(--beige);
 }

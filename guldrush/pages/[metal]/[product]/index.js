@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../../../components/Layout/Layout.js";
 import styles from "./index.module.css";
 import ListProducts from "../../../components/ListProducts/ListProducts.js";
+import ListProductsCoins from "../../../components/ListProductsCoins/ListProductsCoins.js";
 import SelectMenu from "../../../components/SelectMenu/SelectMenu.js";
 import SelectMenuSilver from "../../../components/SelectMenuSilver/SelectMenuSilver.js";
 import Footer from "../../../components/Footer/Footer.js";
@@ -57,7 +58,7 @@ export default function listOfProductsByProduct({ products }) {
       <>
         <div className={styles.main}>
           <Layout />
-          <ListProducts products={sortedProducts} />
+          <ListProductsCoins products={sortedProducts} />
         </div>
         <Footer />
       </>

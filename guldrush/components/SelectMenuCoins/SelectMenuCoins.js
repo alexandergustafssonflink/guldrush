@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useSpring, animated } from "react-spring";
-import styles from "./SelectMenu.module.css";
+import styles from "./SelectMenuSilver.module.css";
 import { useRouter } from "next/router";
 
-export default function SelectMenu(props) {
+export default function SelectMenuSilver(props) {
   return (
     <div className={styles.selectMenu}>
       <Radio />
@@ -48,16 +48,11 @@ const Radio = () => {
 };
 
 const RadioContent = () => {
-  //   if (router.asPath == "/guld/guldtackor") {
   return (
     <div className={styles.radiocontent}>
-      <a href="/guld/guldtackor/1-gram">1 gram</a>
-      <a href="/guld/guldtackor/5-gram">5 gram</a>
-      <a href="/guld/guldtackor/10-gram">10 gram</a>
-      <a href="/guld/guldtackor/20-gram">20 gram</a>
-      <a href="/guld/guldtackor/50-gram">50 gram</a>
-      <a href="/guld/guldtackor/100-gram">100 gram</a>
-      <a href="/guld/guldtackor/250-gram">250 gram</a>
+      <a href="/guld/guldmunt/1-oz">1 oz</a>
+      <a href="/guld/guldmunt/0.5-oz">0.5 oz</a>
+      <a href="/guld/guldmunt/0.25-oz">0.25 oz</a>
     </div>
   );
 };

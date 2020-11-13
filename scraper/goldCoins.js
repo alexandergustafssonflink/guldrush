@@ -54,16 +54,6 @@ async function getGoldCoinsLibertySilver(currentDate) {
     )
   );
 
-  //   let allWeightsTrimmed = allWeights.map((w) =>
-  //     parseFloat(
-  //       w
-  //         .replace("gram", "")
-  //         .replace("Finvikt: ", "")
-  //         .replace(",", ".")
-  //         .split("  ")[0]
-  //     )
-  //   );
-
   let allWeightsTrimmed = allWeights.map((w) =>
     getWeightInGramsFromLibertySilver(w)
   );
@@ -119,6 +109,7 @@ async function getGoldCoinsGuldC(currentDate) {
       )
     ),
     weight: 1,
+    weightOz: 31.1,
     metal: "guld",
     product: "guldmynt",
     company: "Guldcentralen",
@@ -241,10 +232,17 @@ async function getGoldCoinsTavex(currentDate) {
     });
   }
 
-  return products;
+  return allWeights;
 
   await browser.close();
 }
+
+async function test() {
+  let testing = await getGoldCoinsTavex();
+  console.log(testing);
+}
+
+test();
 
 async function getAllGoldCoins(currentDate) {
   let libertyProducts = await getGoldCoinsLibertySilver(currentDate);
@@ -256,4 +254,4 @@ async function getAllGoldCoins(currentDate) {
   return products;
 }
 
-module.exports = getAllGoldCoins;
+// module.exports = getAllGoldCoins;
