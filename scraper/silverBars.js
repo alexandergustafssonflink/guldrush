@@ -23,11 +23,11 @@ async function getSilverBarsLibertySilver(currentDate) {
     )
   );
 
-  // let allPricesWithVat = allPrices.map((price) => {
-  //   let newPrice = price * 1.25;
+  let allPricesWithVat = allPrices.map((price) => {
+    let newPrice = price * 1.25;
 
-  //   return Number(Math.round(newPrice));
-  // });
+    return Number(Math.round(newPrice));
+  });
 
   let allNames = await page.evaluate(() =>
     Array.from(
@@ -66,7 +66,7 @@ async function getSilverBarsLibertySilver(currentDate) {
 
   for (i = 0; i < allNames.length; i++) {
     products.push({
-      price: allPrices[i],
+      price: allPricesWithVat[i],
       url: allLinks[i],
       name: allNames[i],
       weight: allWeightsTrimmed[i],
