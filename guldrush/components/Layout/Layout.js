@@ -30,6 +30,10 @@ const Layout = () => {
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
         </Head>
         <Header />
       </>
@@ -43,6 +47,10 @@ const Layout = () => {
           <link
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
             rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
           />
         </Head>
         <Header />
@@ -59,6 +67,10 @@ const Layout = () => {
             rel="stylesheet"
           />
         </Head>
+        <meta
+          name="description"
+          content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+        />
         <Header />
       </>
     );
@@ -66,11 +78,17 @@ const Layout = () => {
     return (
       <>
         <Head>
-          <title>Guldrush.se | Jämför pris på guld</title>
+          <title>
+            Guldrush.se | Jämför pris på ädelmetaller som guld och silver
+          </title>
           ;
           <link
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
             rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
           />
         </Head>
         <Header />

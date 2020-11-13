@@ -24,10 +24,14 @@ export default function metal({ products }) {
           <Layout />
           <div className={styles.buttonSection}>
             <Link href="/guld/guldmynt">
-              <button className={styles.metalButton}> Guldmynt </button>
+              <a>
+                <button className={styles.metalButton}> Guldmynt </button>
+              </a>
             </Link>
             <Link href="/guld/guldtackor">
-              <button className={styles.metalButton}> Guldtackor </button>
+              <a>
+                <button className={styles.metalButton}> Guldtackor </button>
+              </a>
             </Link>
           </div>
           <div className={styles.productsHeader}>
@@ -44,7 +48,7 @@ export default function metal({ products }) {
         <div className={styles.main}>
           <Layout />
           <div className={styles.buttonSection}>
-            <Link href="silver/silvermynt">
+            <Link href="/silver/silvermynt">
               <button className={styles.metalButton}> Silvermynt </button>
             </Link>
             <Link href="/silver/silvertackor">
