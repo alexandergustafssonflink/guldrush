@@ -16,6 +16,12 @@
   border: none;
   background-color: var(--blue);
   color: var(--gold);
+  transition: 0.5s ease;
+}
+
+.metalButton:hover {
+  background-color: var(--gold);
+  color: var(--blue);
 }
 
 .productsHeader {

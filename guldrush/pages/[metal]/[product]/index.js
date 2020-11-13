@@ -58,7 +58,7 @@ export default function listOfProductsByProduct({ products }) {
       <>
         <div className={styles.main}>
           <Layout />
-          <ListProductsCoins products={sortedProducts} />
+          <ListProducts products={sortedProducts} />
         </div>
         <Footer />
       </>
