@@ -18,6 +18,8 @@ export default function listOfProductsByProduct({ products }) {
   let sortedProducts = latestProducts.sort(sortPrices);
   let router = useRouter();
 
+  console.log(sortedProducts);
+
   if (router.asPath == "/guld/guldtackor") {
     return (
       <>
