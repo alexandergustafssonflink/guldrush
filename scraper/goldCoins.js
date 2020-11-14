@@ -237,19 +237,12 @@ async function getGoldCoinsTavex(currentDate) {
   await browser.close();
 }
 
-// async function test() {
-//   let testing = await getGoldCoinsTavex();
-//   console.log(testing);
-// }
-
-// test();
-
 async function getAllGoldCoins(currentDate) {
   let libertyProducts = await getGoldCoinsLibertySilver(currentDate);
   let guldCProducts = await getGoldCoinsGuldC(currentDate);
-  // let tavexProducts = await getGoldCoinsTavex(currentDate);
+  let tavexProducts = await getGoldCoinsTavex(currentDate);
 
-  let products = libertyProducts.concat(guldCProducts);
+  let products = libertyProducts.concat(guldCProducts, tavexProducts);
 
   return products;
 }
