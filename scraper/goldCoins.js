@@ -58,7 +58,25 @@ async function getGoldCoinsLibertySilver(currentDate) {
     getWeightInGramsFromLibertySilver(w)
   );
 
+  function categorizeWeightInOz(weightInOz) {
+    if (weightInOz == 1) {
+      return "one-oz";
+    } else if (weightInOz == 0.5) {
+      return "half-oz";
+    } else if (weightInOz == 0.25) {
+      return "quarter-oz";
+    } else if (weightInOz == 0.2) {
+      return "one-fifth";
+    } else if (weightInOz == 0.1) {
+      return "one-tenth";
+    } else {
+      return "other";
+    }
+  }
+
   let allWeightsInOz = allWeightsTrimmed.map((w) => gramToOz(w));
+
+  let ozCategory = allWeightsInOz.map((w) => categorizeWeightInOz(w));
 
   let products = [];
 
@@ -67,7 +85,8 @@ async function getGoldCoinsLibertySilver(currentDate) {
       price: allPrices[i],
       url: allLinks[i],
       name: allNames[i],
-      weight: allWeightsTrimmed[i],
+      weightInGrams: allWeightsTrimmed[i],
+      weight: ozCategory[i],
       weightOz: allWeightsInOz[i],
       metal: "guld",
       product: "guldmynt",
@@ -79,6 +98,12 @@ async function getGoldCoinsLibertySilver(currentDate) {
 
   await browser.close();
 }
+// async function test() {
+//   let testing = await getGoldCoinsLibertySilver();
+//   console.log(testing);
+// }
+
+// test();
 
 /// GULDCENTRALEN
 async function getGoldCoinsGuldC(currentDate) {

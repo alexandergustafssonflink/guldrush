@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useSpring, animated } from "react-spring";
-import styles from "./SelectMenuSilver.module.css";
+import styles from "./SelectMenuCoins.module.css";
 import { useRouter } from "next/router";
 
-export default function SelectMenuSilver(props) {
+export default function SelectMenuCoins(props) {
   return (
     <div className={styles.selectMenu}>
       <Radio />
@@ -48,11 +48,13 @@ const Radio = () => {
 };
 
 const RadioContent = () => {
+  const [weight, setWeight] = useState();
+  console.log(weight);
   return (
     <div className={styles.radiocontent}>
-      <a href="/guld/guldmunt/1-oz">1 oz</a>
-      <a href="/guld/guldmunt/0.5-oz">0.5 oz</a>
-      <a href="/guld/guldmunt/0.25-oz">0.25 oz</a>
+      <a onClick={() => setWeight(1)}>1 oz</a>
+      <a onClick={() => setWeight(0.5)}>0.5 oz</a>
+      <a onClick={() => setWeight(0.25)}>0.25 oz</a>
     </div>
   );
 };

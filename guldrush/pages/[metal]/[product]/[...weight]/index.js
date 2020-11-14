@@ -17,9 +17,8 @@ export default function listOfProductsByWeight({ products }) {
     }
   });
 
-  let sortedProducts = latestProducts.sort(sortPrices);
-
   if (router.asPath.includes("/guld/guldtackor")) {
+    let sortedProducts = latestProducts.sort(sortPrices);
     return (
       <>
         <div className={styles.main}>
@@ -31,6 +30,7 @@ export default function listOfProductsByWeight({ products }) {
       </>
     );
   } else if (router.asPath.includes("/silver/silvertackor")) {
+    let sortedProducts = latestProducts.sort(sortPrices);
     return (
       <>
         <div className={styles.main}>
@@ -41,12 +41,22 @@ export default function listOfProductsByWeight({ products }) {
         <Footer />
       </>
     );
+  } else if (router.asPath.includes("/guld/guldmynt")) {
+    let sortedProducts = latestProducts.sort(sortPrices);
+    return (
+      <>
+        <div className={styles.main}>
+          <Layout />
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer />
+      </>
+    );
   }
 }
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
-
   const products = await db
     .collection("prices")
     .find({

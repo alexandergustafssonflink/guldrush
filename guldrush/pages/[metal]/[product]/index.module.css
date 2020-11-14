@@ -33,6 +33,16 @@
   color: black;
 }
 
+.filterMenu {
+  margin-left: 15px;
+  width: 300px;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  height: 50px;
+  background-color: var(--beige);
+  border: solid 1px black;
+}
+
 @media only screen and (min-width: 1000px) {
   .main {
     margin-left: 200px;
@@ -44,5 +54,10 @@
     max-width: 1200px;
     min-width: 1000px;
     background-color: #f3f1f1;
+  }
+
+  .filterMenu {
+    width: 100%;
+    margin: 0px;
   }
 }
