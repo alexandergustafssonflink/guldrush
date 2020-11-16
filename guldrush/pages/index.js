@@ -52,7 +52,7 @@ export default function Home({ prices }) {
             <Link href="/silver">
               <button className={styles.bigButton}>
                 <img
-                  className={styles.yellowBanner}
+                  className={styles.beigeBanner}
                   src="./images/beigebanner.png"
                 />
                 <h3>Alla silverprodukter </h3>
@@ -76,16 +76,18 @@ export default function Home({ prices }) {
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."{" "}
+              sunt in culpa qui officia deserunt mollit anim id est laborum."
             </p>
-            <button className={styles.readMore}>
-              {" "}
-              <p> Läs mer</p>
-              <img
-                className={styles.rightArrow}
-                src="./images/right-arrow.svg"
-              />{" "}
-            </button>
+            <a className={styles.investLink} href="/investera">
+              <button className={styles.readMore}>
+                {" "}
+                <p> Läs mer</p>
+                <img
+                  className={styles.rightArrow}
+                  src="./images/right-arrow.svg"
+                />{" "}
+              </button>
+            </a>
           </div>
         </div>
       </div>

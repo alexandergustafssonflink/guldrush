@@ -97,14 +97,16 @@
 }
 
 .readMore {
-  margin-top: 15px;
+  margin-top: 30px;
   display: flex;
   border: none;
   justify-content: space-between;
   align-items: center;
   width: 90px;
+  cursor: pointer;
   position: relative;
   left: 73%;
+
   background-color: var(--white);
 }
 .readMore p {
@@ -113,6 +115,10 @@
 }
 .rightArrow {
   width: 20px;
+}
+
+.investLink {
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -153,9 +159,13 @@
     transition: 0.5s ease;
   }
 
+  .upper .metalButton {
+    background-color: var(--beige);
+    color: black;
+  }
   .upper .metalButton:hover {
-    background-color: var(--gold);
-    color: var(--blue);
+    background-color: black;
+    color: var(--beige);
   }
 
   .lower .metalButton:hover {
@@ -164,10 +174,33 @@
   }
 
   .yellowBanner {
-    height: 100px;
+    display: none;
   }
   .bigButton {
     margin-bottom: 50px;
+    background-color: var(--blue);
+    color: var(--gold);
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: var(--primary-font);
+    box-shadow: gray 0px 4px 4px 0px;
+    border: none;
+  }
+
+  .bigButton:hover {
+    background-color: var(--gold);
+    color: var(--blue);
+  }
+
+  .bigButton h3 {
+    position: relative;
+    top: 0px;
+    font-size: 18px;
+  }
+
+  .beigeBanner {
+    display: none;
   }
 
   .investHeader {
@@ -194,8 +227,8 @@
   }
 
   .readMore {
-    padding-bottom: 50px;
     position: relative;
     left: 90%;
+    margin-bottom: 50px;
   }
 }

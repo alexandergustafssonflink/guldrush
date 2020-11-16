@@ -9,6 +9,7 @@ import ListProducts from "../../components/ListProducts/ListProducts.js";
 
 export default function metal({ products }) {
   let router = useRouter();
+
   let latestDate = products[0].date;
   let latestProducts = products.filter((p) => {
     if (p.date == latestDate) {
@@ -16,7 +17,6 @@ export default function metal({ products }) {
     }
   });
   let sortedProducts = latestProducts.sort(sortPrices);
-
   if (router.asPath == "/guld") {
     return (
       <>
@@ -36,6 +36,22 @@ export default function metal({ products }) {
           <ListProducts products={sortedProducts} />
         </div>
         <Footer />
+        {/* <div className={styles.main}>
+          <Layout />
+          <div className={styles.buttonSection}>
+            <Link href="/guld/guldmynt">
+              <button className={styles.metalButton}> Guldmynt </button>{" "}
+            </Link>
+            <Link href="/guld/guldtackor">
+              <button className={styles.metalButton}> Guldtackor </button>
+            </Link>
+          </div>
+          <div className={styles.productsHeader}>
+            <h1> Alla produkter </h1>
+          </div>
+          <ListProducts products={sortedProducts} />
+        </div>
+        <Footer /> */}
       </>
     );
   } else if (router.asPath == "/silver") {
@@ -64,7 +80,6 @@ export default function metal({ products }) {
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
-  console.log(context.params.metal);
 
   const products = await db
     .collection("prices")
