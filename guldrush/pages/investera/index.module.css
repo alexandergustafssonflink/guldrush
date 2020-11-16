@@ -86,7 +86,11 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  .investInHeader {
+    margin-top: 50px;
   }
 
   .investText {

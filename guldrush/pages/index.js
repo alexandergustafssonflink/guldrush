@@ -69,14 +69,14 @@ export default function Home({ prices }) {
             </div>
 
             <p className={styles.investText}>
-              {" "}
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              Ädelmetaller i form av guld och silver har i tusentals år använts
+              som betalmedel. Fram till 1971 fungerade den amerikanska dollarn
+              som ett kvitto på fysiskt guld. <br />
+              <br />
+              Varje dollarsedel kom med ett löfte att den när som helst kunde
+              bytas in mot sitt bestämda värde i guld. Även idag äger stater
+              stora mängder guld, som i sin tur används som uppbackning för
+              deras valutor.
             </p>
             <a className={styles.investLink} href="/investera">
               <button className={styles.readMore}>

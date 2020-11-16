@@ -26,11 +26,11 @@ export default function InvestPage() {
           <h1 className={styles.investInHeader}> Investera i guld </h1>
           <p className={styles.investText}>
             Ädelmetaller i form av guld och silver har i tusentals år använts
-            som betalmedel. Faktum är att världsvalutan dollar fram till 1971
-            fungerade som ett kvitto på fysiskt guld. Varje dollarsedel kom med
-            ett löfte att den när som helst kunde bytas in mot en viss mängd
-            fysiskt guld. Även idag äger stater stora mängder fysiskt guld, som
-            i sin tur används som uppbackning för deras valutor.
+            som betalmedel. Fram till 1971 fungerade den amerikanska dollarn som
+            ett kvitto på fysiskt guld. Varje dollarsedel kom med ett löfte att
+            den när som helst kunde bytas in mot sitt bestämda värde i guld.
+            Även idag äger stater stora mängder guld, som i sin tur används som
+            uppbackning för deras valutor.
             <br />
             <br />
             Guld, till skillnad från vanliga valutor, existerar endast i en

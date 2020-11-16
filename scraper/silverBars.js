@@ -81,10 +81,6 @@ async function getSilverBarsLibertySilver(currentDate) {
   await browser.close();
 }
 
-// async function test () {
-
-// }
-
 async function getSilverBarsTavex(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
@@ -152,7 +148,7 @@ async function getSilverBarsGuldC(currentDate) {
     )
   );
 
-  let allWeights = allNames.map((n) => getWeightOutOfName(n));
+  let allWeights = await allNames.map((n) => getWeightOutOfName(n));
 
   let allLinks = await page.evaluate(() =>
     Array.from(document.querySelectorAll(".prodcells a"), (e) => e.href)
