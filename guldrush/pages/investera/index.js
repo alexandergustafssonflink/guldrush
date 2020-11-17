@@ -14,7 +14,11 @@ export default function InvestPage() {
             <h1>Investera i ädelmetaller</h1>
           </div>
           <div className={styles.investImgDiv}>
-            <img className={styles.investImage} src="./images/goldbars.jpg" />
+            <img
+              className={styles.investImage}
+              src="./images/goldbars.jpg"
+              alt="Goldbars"
+            />
             <div className={styles.quoteSection}>
               <p className={styles.quote}>
                 “The desire of gold is not for gold. It is for the means of
@@ -46,12 +50,17 @@ export default function InvestPage() {
               <img
                 className={styles.yellowBanner}
                 src="./images/yellowbanner.png"
+                alt="Yellow banner"
               />
               <h3>Alla guldprodukter</h3>
             </button>
           </Link>
 
-          <img className={styles.investImage} src="./images/silverbars.png" />
+          <img
+            className={styles.investImage}
+            src="./images/silverbars.png"
+            alt="Silverbars"
+          />
           <h1 className={styles.investInHeader}> Investera i silver </h1>
           <p className={styles.investText}>
             Även silver har, mycket på grund av sin hållbarhet, formbarhet och
@@ -74,6 +83,7 @@ export default function InvestPage() {
               <img
                 className={styles.beigeBanner}
                 src="./images/beigebanner.png"
+                alt="Beige banner"
               />
               <h3>Alla silverprodukter </h3>
             </button>

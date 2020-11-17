@@ -44,6 +44,7 @@ export default function Home({ prices }) {
                 <img
                   className={styles.yellowBanner}
                   src="./images/yellowbanner.png"
+                  alt="Yellow banner"
                 />
                 <h3>Alla guldprodukter</h3>
               </button>
@@ -54,6 +55,7 @@ export default function Home({ prices }) {
                 <img
                   className={styles.beigeBanner}
                   src="./images/beigebanner.png"
+                  alt="Beige banner"
                 />
                 <h3>Alla silverprodukter </h3>
               </button>
@@ -65,7 +67,11 @@ export default function Home({ prices }) {
               <h1>Investera i ädelmetaller</h1>
             </div>
             <div className={styles.investImgDiv}>
-              <img className={styles.investImage} src="./images/goldbars.jpg" />
+              <img
+                className={styles.investImage}
+                src="./images/goldbars.jpg"
+                alt="Goldbars"
+              />
             </div>
 
             <p className={styles.investText}>
@@ -81,10 +87,11 @@ export default function Home({ prices }) {
             <a className={styles.investLink} href="/investera">
               <button className={styles.readMore}>
                 {" "}
-                <p> Läs mer</p>
+                <p> Mer om ädelmetaller</p>
                 <img
                   className={styles.rightArrow}
                   src="./images/right-arrow.svg"
+                  alt="Right arrow"
                 />{" "}
               </button>
             </a>

@@ -46,3 +46,10 @@
     background-color: #f3f1f1;
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

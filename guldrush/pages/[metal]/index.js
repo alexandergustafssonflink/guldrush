@@ -36,22 +36,6 @@ export default function metal({ products }) {
           <ListProducts products={sortedProducts} />
         </div>
         <Footer />
-        {/* <div className={styles.main}>
-          <Layout />
-          <div className={styles.buttonSection}>
-            <Link href="/guld/guldmynt">
-              <button className={styles.metalButton}> Guldmynt </button>{" "}
-            </Link>
-            <Link href="/guld/guldtackor">
-              <button className={styles.metalButton}> Guldtackor </button>
-            </Link>
-          </div>
-          <div className={styles.productsHeader}>
-            <h1> Alla produkter </h1>
-          </div>
-          <ListProducts products={sortedProducts} />
-        </div>
-        <Footer /> */}
       </>
     );
   } else if (router.asPath == "/silver") {
