@@ -39,26 +39,30 @@ export default function Home({ prices }) {
           </div>
           <div className={styles.bigButtons}>
             <Link href="/guld">
-              <button className={styles.bigButton}>
-                {" "}
-                <img
-                  className={styles.yellowBanner}
-                  src="./images/yellowbanner.png"
-                  alt="Yellow banner"
-                />
-                <h3>Alla guldprodukter</h3>
-              </button>
+              <a>
+                <button className={styles.bigButton}>
+                  {" "}
+                  <img
+                    className={styles.yellowBanner}
+                    src="./images/yellowbanner.png"
+                    alt="Yellow banner"
+                  />
+                  <h3>Alla guldprodukter</h3>
+                </button>
+              </a>
             </Link>
 
             <Link href="/silver">
-              <button className={styles.bigButton}>
-                <img
-                  className={styles.beigeBanner}
-                  src="./images/beigebanner.png"
-                  alt="Beige banner"
-                />
-                <h3>Alla silverprodukter </h3>
-              </button>
+              <a>
+                <button className={styles.bigButton}>
+                  <img
+                    className={styles.beigeBanner}
+                    src="./images/beigebanner.png"
+                    alt="Beige banner"
+                  />
+                  <h3>Alla silverprodukter </h3>
+                </button>
+              </a>
             </Link>
           </div>
 
