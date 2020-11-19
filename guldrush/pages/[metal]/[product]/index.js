@@ -71,11 +71,12 @@ export default function listOfProductsByProduct({ products }) {
           <div className={styles.main}>
             <Layout />
             <select className={styles.filterMenu} onChange={filterFunc}>
-              <option value={null}>Alla mynt</option>
+              <option value={null}>Välj vikt</option>
               <option value={1}>1 oz</option>
               <option value={0.5}>0.5 oz </option>
               <option value={0.25}>0.25 oz </option>
               <option value={0.1}>0.10 oz </option>
+              <option value={null}>Alla mynt</option>
             </select>
             <ListProducts products={oneOzProducts} />
           </div>
@@ -88,11 +89,12 @@ export default function listOfProductsByProduct({ products }) {
           <div className={styles.main}>
             <Layout />
             <select className={styles.filterMenu} onChange={filterFunc}>
-              <option value={null}>Alla mynt</option>
+              <option value={null}>Välj vikt</option>
               <option value={1}>1 oz</option>
               <option value={0.5}>0.5 oz </option>
               <option value={0.25}>0.25 oz </option>
               <option value={0.1}>0.10 oz </option>
+              <option value={null}>Alla mynt</option>
             </select>
             <ListProducts products={halfOzProducts} />
           </div>
@@ -105,11 +107,12 @@ export default function listOfProductsByProduct({ products }) {
           <div className={styles.main}>
             <Layout />
             <select className={styles.filterMenu} onChange={filterFunc}>
-              <option value={null}>Alla mynt</option>
+              <option value={null}>Välj vikt</option>
               <option value={1}>1 oz</option>
               <option value={0.5}>0.5 oz </option>
               <option value={0.25}>0.25 oz </option>
               <option value={0.1}>0.10 oz </option>
+              <option value={null}>Alla mynt</option>
             </select>
             <ListProducts products={quarterOzProducts} />
           </div>
@@ -122,11 +125,12 @@ export default function listOfProductsByProduct({ products }) {
           <div className={styles.main}>
             <Layout />
             <select className={styles.filterMenu} onChange={filterFunc}>
-              <option value={null}>Alla mynt</option>
+              <option value={null}>Välj vikt</option>
               <option value={1}>1 oz</option>
               <option value={0.5}>0.5 oz </option>
               <option value={0.25}>0.25 oz </option>
               <option value={0.1}>0.10 oz </option>
+              <option value={null}>Alla mynt</option>
             </select>
             <ListProducts products={oneTenthOzProducts} />
           </div>
@@ -139,11 +143,12 @@ export default function listOfProductsByProduct({ products }) {
           <div className={styles.main}>
             <Layout />
             <select className={styles.filterMenu} onChange={filterFunc}>
-              <option value={null}>Alla mynt</option>
+              <option value={null}>Välj vikt</option>
               <option value={1}>1 oz</option>
               <option value={0.5}>0.5 oz </option>
               <option value={0.25}>0.25 oz </option>
               <option value={0.1}>0.10 oz </option>
+              <option value={null}>Alla mynt</option>
             </select>
             <ListProducts products={sortedProducts} />
           </div>

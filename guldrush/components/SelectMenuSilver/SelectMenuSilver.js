@@ -30,7 +30,7 @@ const Radio = () => {
         onClick={() => setToggle(!isToggled)}
       >
         <div className={styles.radio}>
-          <p>Välj gram</p>
+          <p>Välj vikt</p>
           <animated.p
             style={{
               transform: y.interpolate((y) => `rotateX(${y}deg)`),
