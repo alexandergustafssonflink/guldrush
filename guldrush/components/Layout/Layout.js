@@ -43,6 +43,23 @@ const Layout = () => {
         <Header />
       </>
     );
+  } else if (router.asPath.includes("investera")) {
+    return (
+      <>
+        <Head>
+          <title>Guldrush.se | Investera i guld och silver</title>;
+          <link
+            href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
+            rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
+        </Head>
+        <Header />
+      </>
+    );
   } else if (router.asPath.includes("guld")) {
     return (
       <>

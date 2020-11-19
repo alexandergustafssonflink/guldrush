@@ -121,6 +121,13 @@ async function getSilverBarsTavex(currentDate) {
   await browser.close();
 }
 
+// async function test() {
+//   let testing = await getSilverBarsTavex();
+//   console.log(testing);
+// }
+
+// test();
+
 async function getSilverBarsGuldC(currentDate) {
   const browser = await puppeteer.launch({
     headless: true,
@@ -157,16 +164,18 @@ async function getSilverBarsGuldC(currentDate) {
   let products = [];
 
   for (i = 0; i < allNames.length; i++) {
-    products.push({
-      price: allPrices[i],
-      url: allLinks[i],
-      name: allNames[i],
-      weight: allWeights[i],
-      metal: "silver",
-      product: "silvertackor",
-      company: "Guldcentralen",
-      date: currentDate,
-    });
+    if (allPrices[i] !== null) {
+      products.push({
+        price: allPrices[i],
+        url: allLinks[i],
+        name: allNames[i],
+        weight: allWeights[i],
+        metal: "silver",
+        product: "silvertackor",
+        company: "Guldcentralen",
+        date: currentDate,
+      });
+    }
   }
 
   return products;

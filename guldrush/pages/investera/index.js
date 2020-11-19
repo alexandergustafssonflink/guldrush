@@ -75,7 +75,7 @@ export default function InvestPage() {
             av andra material.
             <br />
             <br />
-            Silver har stora anitbakteriella fördelar och används därför även
+            Silver har stora antibakteriella fördelar och används därför även
             inom läkemedelsindustrin.
           </p>
           <Link href="/silver">

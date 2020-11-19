@@ -98,12 +98,6 @@ async function getGoldCoinsLibertySilver(currentDate) {
 
   await browser.close();
 }
-// async function test() {
-//   let testing = await getGoldCoinsLibertySilver();
-//   console.log(testing);
-// }
-
-// test();
 
 /// GULDCENTRALEN
 async function getGoldCoinsGuldC(currentDate) {

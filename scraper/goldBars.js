@@ -111,16 +111,18 @@ async function getGoldBarsGuldC(currentDate) {
   let products = [];
 
   for (i = 0; i < allNames.length; i++) {
-    products.push({
-      price: allPrices[i],
-      url: allLinks[i],
-      name: allNames[i],
-      weight: allWeights[i],
-      metal: "guld",
-      product: "guldtackor",
-      company: "Guldcentralen",
-      date: currentDate,
-    });
+    if (allPrices[i] !== null) {
+      products.push({
+        price: allPrices[i],
+        url: allLinks[i],
+        name: allNames[i],
+        weight: allWeights[i],
+        metal: "guld",
+        product: "guldtackor",
+        company: "Guldcentralen",
+        date: currentDate,
+      });
+    }
   }
 
   return products;
