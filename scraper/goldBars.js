@@ -93,7 +93,7 @@ async function getGoldBarsGuldC(currentDate) {
     )
   );
 
-  allPrices = await allPrices.map((p) => processPrice(p));
+  let allPrices = await allPrices.map((p) => processPrice(p));
 
   let allNames = await page.evaluate(() =>
     Array.from(
@@ -111,7 +111,7 @@ async function getGoldBarsGuldC(currentDate) {
   let products = [];
 
   for (i = 0; i < allNames.length; i++) {
-    if (allPrices[i] !== null) {
+    if (allNames[i] !== "") {
       products.push({
         price: allPrices[i],
         url: allLinks[i],

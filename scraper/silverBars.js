@@ -164,7 +164,7 @@ async function getSilverBarsGuldC(currentDate) {
   let products = [];
 
   for (i = 0; i < allNames.length; i++) {
-    if (allPrices[i] !== null) {
+    if (allNames[i] !== "") {
       products.push({
         price: allPrices[i],
         url: allLinks[i],

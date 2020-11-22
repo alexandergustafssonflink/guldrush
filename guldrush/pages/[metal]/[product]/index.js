@@ -161,7 +161,6 @@ export default function listOfProductsByProduct({ products }) {
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
-
   const products = await db
     .collection("prices")
     .find({
