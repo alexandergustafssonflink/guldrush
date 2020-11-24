@@ -192,4 +192,11 @@ async function getAllSilverBars(currentDate) {
   return products;
 }
 
+// async function test() {
+//   let testing = await getAllSilverBars();
+//   console.log(testing);
+// }
+
+// test();
+
 module.exports = getAllSilverBars;

@@ -17,18 +17,26 @@ async function run() {
     const database = client.db("guldrush");
     const collection = database.collection("prices");
     let currentDate = new Date();
-
+    console.log("GETTING GOLDBARS");
     let goldBars = await getAllGoldBars(currentDate);
+    console.log("GETTING GOLDCOINS");
     let goldCoins = await getAllGoldCoins(currentDate);
+    console.log("GETTING SilverBARS");
     let silverBars = await getAllSilverBars(currentDate);
+    console.log("GETTING SilverCOINS");
     let silverCoins = await getAllSilverCoins(currentDate);
 
+    console.log("INSERTING Golbars!!");
+
     const resultGold = await collection.insertMany(goldBars);
+
     const resultGoldCoins = await collection.insertMany(goldCoins);
     const resultSilver = await collection.insertMany(silverBars);
     const resultSilverCoins = await collection.insertMany(silverCoins);
 
     console.log("DONE!");
+  } catch (e) {
+    console.log(e);
   } finally {
     await client.close();
     process.exit();

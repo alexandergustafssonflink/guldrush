@@ -93,7 +93,7 @@ async function getGoldBarsGuldC(currentDate) {
     )
   );
 
-  let allPrices = await allPrices.map((p) => processPrice(p));
+  allPrices = await allPrices.map((p) => processPrice(p));
 
   let allNames = await page.evaluate(() =>
     Array.from(
