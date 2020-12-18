@@ -5,7 +5,8 @@ const getAllGoldCoins = require("./goldCoins");
 const getAllSilverCoins = require("./silverCoins");
 const uri =
   "mongodb+srv://alexander:zni2ev@cluster0.h5faa.mongodb.net/test?retryWrites=true&w=majority";
-
+// const jsonFile = require("./test.json");
+var fs = require("fs");
 const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
@@ -19,6 +20,7 @@ async function run() {
     let currentDate = new Date();
     console.log("GETTING GOLDBARS");
     let goldBars = await getAllGoldBars(currentDate);
+
     console.log("GETTING GOLDCOINS");
     let goldCoins = await getAllGoldCoins(currentDate);
     console.log("GETTING SilverBARS");
@@ -26,13 +28,15 @@ async function run() {
     console.log("GETTING SilverCOINS");
     let silverCoins = await getAllSilverCoins(currentDate);
 
-    console.log("INSERTING Golbars!!");
-
     const resultGold = await collection.insertMany(goldBars);
-
     const resultGoldCoins = await collection.insertMany(goldCoins);
     const resultSilver = await collection.insertMany(silverBars);
     const resultSilverCoins = await collection.insertMany(silverCoins);
+
+    // fs.writeFileSync("test4.json", JSON.stringify(goldBars), (err) => {
+    //   if (err) throw err;
+    //   console.log("Data written to file");
+    // });
 
     console.log("DONE!");
   } catch (e) {

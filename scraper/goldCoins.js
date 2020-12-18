@@ -258,10 +258,10 @@ async function getGoldCoinsTavex(currentDate) {
 
 async function getAllGoldCoins(currentDate) {
   let libertyProducts = await getGoldCoinsLibertySilver(currentDate);
-  let guldCProducts = await getGoldCoinsGuldC(currentDate);
+  // let guldCProducts = await getGoldCoinsGuldC(currentDate);
   let tavexProducts = await getGoldCoinsTavex(currentDate);
 
-  let products = libertyProducts.concat(guldCProducts, tavexProducts);
+  let products = libertyProducts.concat(tavexProducts);
 
   return products;
 }
