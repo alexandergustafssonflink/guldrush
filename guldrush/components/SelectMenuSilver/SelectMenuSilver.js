@@ -50,9 +50,9 @@ const Radio = () => {
 const RadioContent = () => {
   return (
     <div className={styles.radiocontent}>
-      <a href="/silver/silvertackor/100-gram">100 gram</a>
-      <a href="/silver/silvertackor/500-gram">500 gram</a>
-      <a href="/silver/silvertackor/1000-gram">1000 gram</a>
+      <a href="/silver/silvertackor/100">100 gram</a>
+      <a href="/silver/silvertackor/500">500 gram</a>
+      <a href="/silver/silvertackor/1000">1000 gram</a>
     </div>
   );
 };

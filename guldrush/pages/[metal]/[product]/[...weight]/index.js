@@ -1,5 +1,5 @@
 import sortPrices from "../../../../functions/sortPrices";
-import { connectToDatabase } from "../../../../util/mongodb";
+// import { connectToDatabase } from "../../../../util/mongodb";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import Layout from "../../../../components/Layout/Layout.js";
@@ -55,22 +55,105 @@ export default function listOfProductsByWeight({ products }) {
   }
 }
 
+// export async function getStaticPaths(context) {
+//   console.log(context);
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           product: "guldtackor",
+//           metal: "guld",
+//           weight: ["50", "100"],
+//         },
+//       },
+//       { params: { product: "guldmynt", metal: "guld", weight: "50" } },
+//       { params: { product: "silvertackor", metal: "silver", weight: "50" } },
+//       { params: { product: "silvermynt", metal: "silver", weight: "50" } },
+//     ],
+//     fallback: false,
+//   };
+// }
+
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           product: "guldtackor",
+//           metal: "guld",
+//           weight: ["1", "5", "10"],
+//         },
+//       },
+//       {
+//         params: {
+//           product: "guldmynt",
+//           metal: "guld",
+//           weight: ["1", "5", "10"],
+//         },
+//       },
+//       {
+//         params: {
+//           product: "silvertackor",
+//           metal: "silver",
+//           weight: ["1", "5", "10"],
+//         },
+//       },
+//       {
+//         params: {
+//           product: "silvermynt",
+//           metal: "silver",
+//           weight: ["1", "5", "10"],
+//         },
+//       },
+//     ],
+//     fallback: true,
+//   };
+// }
+
+// export async function getStaticProps(context) {
+//   const res = await fetch(
+//     `https://guldrush-api.herokuapp.com/${context.params.metal}/${context.params.product}/${context.params.weight}`
+//   );
+//   const products = await res.json();
+
+//   return {
+//     props: {
+//       products: products,
+//     },
+//   };
+// }
+
 export async function getServerSideProps(context) {
-  const { db } = await connectToDatabase();
-  const products = await db
-    .collection("prices")
-    .find({
-      weight: parseInt(context.params.weight),
-      metal: context.params.metal,
-      product: context.params.product,
-    })
-    .sort({ date: -1 })
-    .limit(100)
-    .toArray();
+  console.log(context.params.weight);
+  const res = await fetch(
+    `https://guldrush-api.herokuapp.com/${context.params.metal}/${context.params.product}/${context.params.weight}`
+  );
+  const products = await res.json();
 
   return {
     props: {
-      products: JSON.parse(JSON.stringify(products)),
+      products: products,
     },
   };
 }
+
+// export async function getServerSideProps(context) {
+
+//   const { db } = await connectToDatabase();
+//   const products = await db
+//     .collection("prices")
+//     .find({
+//       weight: parseInt(context.params.weight),
+//       metal: context.params.metal,
+//       product: context.params.product,
+//     })
+//     .sort({ date: -1 })
+//     .limit(100)
+//     .toArray();
+
+//   return {
+//     props: {
+//       products: JSON.parse(JSON.stringify(products)),
+//     },
+//   };
+// }

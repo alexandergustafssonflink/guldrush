@@ -1,5 +1,5 @@
 import sortPrices from "../../functions/sortPrices";
-import { connectToDatabase } from "../../util/mongodb";
+// import { connectToDatabase } from "../../util/mongodb";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import ListProducts from "../../components/ListProducts/ListProducts.js";
 
 export default function metal({ products }) {
   let router = useRouter();
+  console.log(products);
 
   let latestDate = products[0].date;
   let latestProducts = products.filter((p) => {
@@ -62,21 +63,41 @@ export default function metal({ products }) {
   }
 }
 
-export async function getServerSideProps(context) {
-  const { db } = await connectToDatabase();
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { metal: "guld" } }, { params: { metal: "silver" } }],
+    fallback: true,
+  };
+}
 
-  const products = await db
-    .collection("prices")
-    .find({
-      metal: context.params.metal,
-    })
-    .sort({ date: -1 })
-    .limit(300)
-    .toArray();
+export async function getStaticProps(context) {
+  const res = await fetch(
+    `https://guldrush-api.herokuapp.com/${context.params.metal}`
+  );
+  const products = await res.json();
 
   return {
     props: {
-      products: JSON.parse(JSON.stringify(products)),
+      products: products,
     },
   };
 }
+
+// export async function getServerSideProps(context) {
+//   const { db } = await connectToDatabase();
+
+//   const products = await db
+//     .collection("prices")
+//     .find({
+//       metal: context.params.metal,
+//     })
+//     .sort({ date: -1 })
+//     .limit(300)
+//     .toArray();
+
+//   return {
+//     props: {
+//       products: JSON.parse(JSON.stringify(products)),
+//     },
+//   };
+// }

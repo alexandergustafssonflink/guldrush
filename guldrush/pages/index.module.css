@@ -110,8 +110,13 @@
   cursor: pointer;
   position: relative;
   left: 42%;
+  transition: 0.3s ease;
 
   background-color: var(--white);
+}
+
+.readMore:hover {
+  color: var(--blue);
 }
 .readMore p {
   font-family: var(--primary-font);

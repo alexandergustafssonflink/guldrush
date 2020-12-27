@@ -51,13 +51,14 @@ const RadioContent = () => {
   //   if (router.asPath == "/guld/guldtackor") {
   return (
     <div className={styles.radiocontent}>
-      <a href="/guld/guldtackor/1-gram">1 gram</a>
-      <a href="/guld/guldtackor/5-gram">5 gram</a>
-      <a href="/guld/guldtackor/10-gram">10 gram</a>
-      <a href="/guld/guldtackor/20-gram">20 gram</a>
-      <a href="/guld/guldtackor/50-gram">50 gram</a>
-      <a href="/guld/guldtackor/100-gram">100 gram</a>
-      <a href="/guld/guldtackor/250-gram">250 gram</a>
+      <a href="/guld/guldtackor/1">1 gram</a>
+      <a href="/guld/guldtackor/2">2 gram</a>
+      <a href="/guld/guldtackor/5">5 gram</a>
+      <a href="/guld/guldtackor/10">10 gram</a>
+      <a href="/guld/guldtackor/20">20 gram</a>
+      <a href="/guld/guldtackor/50">50 gram</a>
+      <a href="/guld/guldtackor/100">100 gram</a>
+      <a href="/guld/guldtackor/250">250 gram</a>
     </div>
   );
 };
