@@ -9,8 +9,6 @@ import ListProducts from "../../components/ListProducts/ListProducts.js";
 
 export default function metal({ products }) {
   let router = useRouter();
-  console.log(products);
-
   let latestDate = products[0].date;
   let latestProducts = products.filter((p) => {
     if (p.date == latestDate) {
