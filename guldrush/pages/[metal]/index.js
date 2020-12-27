@@ -61,14 +61,27 @@ export default function metal({ products }) {
   }
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { metal: "guld" } }, { params: { metal: "silver" } }],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [{ params: { metal: "guld" } }, { params: { metal: "silver" } }],
+//     fallback: true,
+//   };
+// }
 
-export async function getStaticProps(context) {
+// export async function getStaticProps(context) {
+//   const res = await fetch(
+//     `https://guldrush-api.herokuapp.com/${context.params.metal}`
+//   );
+//   const products = await res.json();
+
+//   return {
+//     props: {
+//       products: products,
+//     },
+//   };
+// }
+
+export async function getServerSideProps(context) {
   const res = await fetch(
     `https://guldrush-api.herokuapp.com/${context.params.metal}`
   );

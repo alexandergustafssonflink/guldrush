@@ -124,7 +124,6 @@ export default function listOfProductsByWeight({ products }) {
 // }
 
 export async function getServerSideProps(context) {
-  console.log(context.params.weight);
   const res = await fetch(
     `https://guldrush-api.herokuapp.com/${context.params.metal}/${context.params.product}/${context.params.weight}`
   );
