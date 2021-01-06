@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Header from "../Header/Header.js";
 import { useRouter } from "next/router";
+// import React from "react";
+// import { initGA, logPageView } from '../utils/analytics'
 
 const Layout = () => {
   let router = useRouter();
@@ -22,6 +24,20 @@ const Layout = () => {
             name="description"
             content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
           />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
+          />
         </Head>
         <Header />
       </>
@@ -39,7 +55,22 @@ const Layout = () => {
             name="description"
             content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
           />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
+          />
         </Head>
+
         <Header />
       </>
     );
@@ -55,6 +86,20 @@ const Layout = () => {
           <meta
             name="description"
             content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
           />
         </Head>
         <Header />
@@ -74,6 +119,20 @@ const Layout = () => {
             name="description"
             content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
           />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
+          />
         </Head>
         <Header />
       </>
@@ -88,11 +147,26 @@ const Layout = () => {
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
+          />
         </Head>
-        <meta
-          name="description"
-          content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
-        />
+
         <Header />
       </>
     );
@@ -111,6 +185,20 @@ const Layout = () => {
           <meta
             name="description"
             content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
           />
         </Head>
         <Header />
