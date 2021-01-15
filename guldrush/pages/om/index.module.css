@@ -1,0 +1,151 @@
+.investSection {
+  margin: 30px 15px 0px 15px;
+  padding-bottom: 50px;
+}
+
+.investHeader {
+  border-bottom: solid black 1px;
+}
+
+.investHeader h1 {
+  padding-bottom: 5px;
+  font-family: var(--primary-font);
+  font-size: 22px;
+}
+.investImage {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.quoteSection {
+  margin: 15px 0px 30px 0px;
+}
+
+.quote {
+  font-style: italic;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.quoteAuthor {
+  font-weight: 200;
+  text-align: right;
+  font-size: 16px;
+  font-family: var(--secondary-font);
+}
+
+.investText {
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: var(--secondary-font);
+}
+
+.bigButton {
+  width: 100%;
+  height: 95px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--white);
+  font-size: 18px;
+  font-family: var(--primary-font);
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+.bigButton h3 {
+  position: relative;
+  top: -60px;
+  font-size: 18px;
+}
+
+.investInHeader {
+  font-family: var(--primary-font);
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .main {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 1200px;
+    min-width: 1000px;
+    background-color: #f3f1f1;
+  }
+
+  .investHeader {
+    width: 50%;
+    border-bottom: solid 2px black;
+    margin-bottom: 30px;
+  }
+
+  .investImgDiv {
+    margin-bottom: 30px;
+  }
+  .investImage {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .investInHeader {
+    margin-top: 50px;
+  }
+
+  .investText {
+    margin-bottom: 30px;
+  }
+
+  .investSection {
+    padding-bottom: 100px;
+  }
+
+  .yellowBanner {
+    display: none;
+  }
+  .bigButton {
+    margin-bottom: 100px;
+    margin-right: 40px;
+    background-color: var(--beige);
+    color: var(--black);
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: var(--primary-font);
+    box-shadow: gray 0px 4px 4px 0px;
+    border: none;
+    width: 30%;
+  }
+
+  .bigButton:hover {
+    background-color: black;
+    color: var(--beige);
+  }
+
+  .bigButton h3 {
+    position: relative;
+    top: 0px;
+    font-size: 18px;
+  }
+
+  .beigeBanner {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #f3f1f1;
+  }
+
+  .beigeBanner {
+    width: 50%;
+  }
+
+  .yellowBanner {
+    width: 50%;
+  }
+}

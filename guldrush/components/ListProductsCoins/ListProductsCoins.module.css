@@ -16,6 +16,11 @@
   /* border: solid black; */
   display: flex;
   justify-content: space-between;
+  transition: 0.3 ease;
+  border: 1px solid transparent;
+}
+.product:hover {
+  border: solid 5px black;
 }
 
 .nameTag {
