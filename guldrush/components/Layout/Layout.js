@@ -1,11 +1,16 @@
 import Head from "next/head";
 import Header from "../Header/Header.js";
+import NavMenu from "../NavMenu/NavMenu.js";
 import { useRouter } from "next/router";
+import React, { useState } from "react";
+import BurgerMenu from "../BurgerMenu/BurgerMenu.js";
+
 // import React from "react";
 // import { initGA, logPageView } from '../utils/analytics'
 
 const Layout = () => {
   let router = useRouter();
+  const [open, setOpen] = useState(false);
   if (router.asPath.includes("guldtackor")) {
     return (
       <>
@@ -40,6 +45,7 @@ const Layout = () => {
           />
         </Head>
         <Header />
+        <NavMenu />
       </>
     );
   } else if (router.asPath.includes("guldmynt")) {
@@ -72,6 +78,7 @@ const Layout = () => {
         </Head>
 
         <Header />
+        <NavMenu />
       </>
     );
   } else if (router.asPath.includes("investera")) {
@@ -103,6 +110,7 @@ const Layout = () => {
           />
         </Head>
         <Header />
+        <NavMenu />
       </>
     );
   } else if (router.asPath.includes("guld")) {
@@ -135,6 +143,7 @@ const Layout = () => {
           />
         </Head>
         <Header />
+        <NavMenu />
       </>
     );
   } else if (router.asPath.includes("silver")) {
@@ -168,15 +177,14 @@ const Layout = () => {
         </Head>
 
         <Header />
+        <NavMenu />
       </>
     );
   } else {
     return (
       <>
         <Head>
-          <title>
-            Guldrush.se | Jämför pris på ädelmetaller som guld och silver
-          </title>
+          <title>Guldrush.se | Jämför pris på guld och silver</title>
           ;
           <link
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
@@ -202,6 +210,7 @@ const Layout = () => {
           />
         </Head>
         <Header />
+        <NavMenu />
       </>
     );
   }
