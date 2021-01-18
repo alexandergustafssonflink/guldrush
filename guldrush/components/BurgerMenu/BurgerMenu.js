@@ -14,6 +14,8 @@ const BurgerMenu = () => {
   //   event.preventDefault();
   // }
 
+  console.log(Menu.isOpen);
+
   // render() {
   // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
   return (
@@ -24,17 +26,17 @@ const BurgerMenu = () => {
       <ul className={styles.subMenu}>
         <Link href="/guld">
           <li className={goldIsOpen ? "list-item-show" : "list-item-hidden"}>
-            Alla guldprodukter
+            <button> Alla guldprodukter</button>
           </li>
         </Link>
         <Link href="/guld/guldtackor">
           <li className={goldIsOpen ? "list-item-show" : "list-item-hidden"}>
-            Guldtackor
+            <button> Guldtackor</button>
           </li>
         </Link>
         <Link href="/guld/guldmynt">
           <li className={goldIsOpen ? "list-item-show" : "list-item-hidden"}>
-            Guldmynt
+            <button> Guldmynt</button>
           </li>
         </Link>
       </ul>
@@ -46,17 +48,17 @@ const BurgerMenu = () => {
       <ul className={styles.subMenu}>
         <Link href="/silver">
           <li className={silverIsOpen ? "list-item-show" : "list-item-hidden"}>
-            Alla silverprodukter
+            <button> Alla silverprodukter</button>
           </li>
         </Link>
         <Link href="/silver/silvertackor">
           <li className={silverIsOpen ? "list-item-show" : "list-item-hidden"}>
-            Silvertackor
+            <button> Silvertackor</button>
           </li>
         </Link>
         <Link href="/silver/silvermynt">
           <li className={silverIsOpen ? "list-item-show" : "list-item-hidden"}>
-            Silvermynt
+            <button> Silvermynt</button>
           </li>
         </Link>
       </ul>
