@@ -62,7 +62,7 @@
 /* Individual item */
 .bm-item {
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .list-item-hidden {
@@ -75,7 +75,7 @@
 
 .list-item-show {
   display: block;
-  margin-bottom: 5px;
+  margin-top: 10px;
   transition: all 0.3s ease;
   opacity: 1;
 }
