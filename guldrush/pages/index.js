@@ -1,19 +1,24 @@
 import Head from "next/head";
-// import { connectToDatabase } from "../util/mongodb";
+import { connectToDatabase } from "../util/mongodb";
 import sortPrices from "../functions/sortPrices";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "./index.module.css";
 import Layout from "../components/Layout/Layout.js";
 import Footer from "../components/Footer/Footer.js";
+import PriceChart from "../components/PriceChart/PriceChart.js";
 
-export default function Home() {
+export default function Home(props) {
+  // console.log(dailyPrices);
+
   return (
     <>
       <div className={styles.main}>
         <Layout />
+
         <div className={styles.metalChoice}>
           <div className={styles.headerCompare}>
+            <PriceChart props={props} />
             <h1> Jämför priser på: </h1>
           </div>
 
@@ -105,6 +110,23 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const { db } = await connectToDatabase();
+
+  const dailyPrices = await db
+    .collection("daily-prices")
+    .find({})
+    .sort({ date: -1 })
+    .limit(2)
+    .toArray();
+
+  return {
+    props: {
+      dailyPrices: JSON.parse(JSON.stringify(dailyPrices)),
+    },
+  };
 }
 
 // export async function getServerSideProps() {

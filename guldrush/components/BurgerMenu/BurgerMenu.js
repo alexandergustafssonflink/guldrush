@@ -14,8 +14,6 @@ const BurgerMenu = () => {
   //   event.preventDefault();
   // }
 
-  console.log(Menu.isOpen);
-
   // render() {
   // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
   return (

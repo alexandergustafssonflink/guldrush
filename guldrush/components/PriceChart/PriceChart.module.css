@@ -1,0 +1,25 @@
+.priceChart h3 {
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  padding: 5px;
+}
+.priceChart {
+  border: solid 1px black;
+  padding: 10px;
+  position: absolute;
+  top: 6%;
+  right: 15%;
+}
+
+.priceChart h3 span {
+  font-family: var(--primary-font);
+}
+
+@media only screen and (max-width: 999px) {
+  .priceChart {
+    position: relative;
+    top: 0%;
+    right: 0%;
+    margin-bottom: 20px;
+  }
+}
