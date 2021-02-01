@@ -1,4 +1,4 @@
-import client from "./contentful.js";
+import client from "../../util/contentful.js";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import Link from "next/link";
