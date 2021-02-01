@@ -8,8 +8,8 @@
   background-color: var(--blue);
   font-size: 18px;
   color: var(--beige);
-  margin-left: -10%;
-  margin-right: -10%;
+  margin-left: -100px;
+  margin-right: -100px;
   /* align-items: center; */
 }
 
@@ -98,10 +98,6 @@
 .radiocontent a:hover {
   background-color: black;
   color: var(--beige);
-}
-
-.navItemBlog {
-  display: none;
 }
 
 @media only screen and (max-width: 800px) {

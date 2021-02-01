@@ -2,7 +2,7 @@
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 36px;
+  left: 25px;
   top: 36px;
 }
 
@@ -101,10 +101,6 @@
 .menu-item {
   text-decoration: none;
   color: var(--beige);
-}
-
-.menu-item-blog {
-  display: none !important;
 }
 
 @media only screen and (min-width: 800px) {
