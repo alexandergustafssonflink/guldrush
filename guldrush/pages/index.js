@@ -18,7 +18,7 @@ export default function Home(props) {
 
         <div className={styles.metalChoice}>
           <div className={styles.headerCompare}>
-            <PriceChart props={props} />
+            <PriceChart className={styles.mobilePriceChart} props={props} />
             <h1> Jämför priser på: </h1>
           </div>
 
