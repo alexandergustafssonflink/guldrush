@@ -28,7 +28,10 @@ export default function Blog(props) {
                     src={p.fields.image.fields.file.url}
                   />
                 </div>
-                <h1 className={styles.blogTitle}> {p.fields.titel} </h1>
+                <a className={styles.link} href={"/blogg/" + p.fields.slug}>
+                  {" "}
+                  <h1 className={styles.blogTitle}> {p.fields.titel} </h1>
+                </a>
                 <h3 className={styles.dateTime}> {newDate}</h3>
                 <div className={styles.textContent}>
                   {documentToReactComponents(p.fields.textContent)}

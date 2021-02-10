@@ -38,16 +38,6 @@
 .blogTitle {
   font-family: var(--secondary-font);
   font-size: 20px;
-  text-decoration: none;
-  color: black;
-}
-
-.blogTitle:hover {
-  color: gray;
-}
-
-.link {
-  text-decoration: none;
 }
 
 .dateTime {
