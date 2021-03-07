@@ -43,7 +43,7 @@ async function run() {
     console.log(e);
   } finally {
     await client.close();
-    // process.exit();
+    process.exit();
   }
 }
 run().catch(console.dir);
