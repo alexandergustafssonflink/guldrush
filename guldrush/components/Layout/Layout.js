@@ -8,7 +8,7 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu.js";
 // import React from "react";
 // import { initGA, logPageView } from '../utils/analytics'
 
-const Layout = () => {
+const Layout = (props) => {
   let router = useRouter();
   const [open, setOpen] = useState(false);
   if (router.asPath.includes("guldtackor")) {
@@ -151,6 +151,40 @@ const Layout = () => {
       <>
         <Head>
           <title>Guldrush.se | Jämför pris på silver</title>
+          ;
+          <link
+            href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
+            rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="Jämför pris på guldtackor, guldmynt, silvertackor och silvermynt"
+          />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YK8J27DT1L"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8J27DT1L');
+        `,
+            }}
+          />
+        </Head>
+
+        <Header />
+        <NavMenu />
+      </>
+    );
+  } else if (router.query.blogpost) {
+    return (
+      <>
+        <Head>
+          <title>Guldrush.se | {props.props}</title>
           ;
           <link
             href="https://fonts.googleapis.com/css2?family=Arvo&family=Raleway&display=swap"
