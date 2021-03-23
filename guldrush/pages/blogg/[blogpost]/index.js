@@ -14,7 +14,7 @@ export default function BlogPost(props) {
   return (
     <>
       <div className={styles.main}>
-        <Layout />
+        <Layout props={blogPost.titel} />
         <div className={styles.blogDiv}>
           <div className={styles.blogPost}>
             <div className={styles.imgDiv}>
