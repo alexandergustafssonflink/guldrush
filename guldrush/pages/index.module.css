@@ -26,7 +26,7 @@
 }
 
 .upper .metalButton {
-  color: var(--gold);
+  color: var(--beige);
   background-color: var(--blue);
 }
 
@@ -186,10 +186,20 @@
   .yellowBanner {
     display: none;
   }
+
+  .bigButtons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .bigButtons a {
+    width: 35%;
+  }
   .bigButton {
     margin-bottom: 50px;
+    width: 100%;
     background-color: var(--blue);
-    color: var(--gold);
+    color: var(--beige);
     transition: 0.5s ease;
     cursor: pointer;
     font-size: 18px;
@@ -199,7 +209,7 @@
   }
 
   .bigButton:hover {
-    background-color: var(--gold);
+    background-color: var(--beige);
     color: var(--blue);
   }
 
