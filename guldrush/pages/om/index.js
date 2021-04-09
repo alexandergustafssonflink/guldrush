@@ -20,14 +20,14 @@ export default function InvestPage() {
             i historien. Podcasten blev inledningen på en resa ner i det ädla
             kaninhål som guld och silver är. <br /> <br />
             När vi insåg hur mycket guld och övriga ädelmetaller spelat roll
-            historiskt, samtidigt som det då i princip inte talades något om det
+            historiskt, samtidigt som det då i princip inte talas något om det
             alls, blev vi exalterade och frustrerade. En viss kognitiv dissonans
-            infann sig. Hur kommer det sig egentligen att denna information ej
+            infann sig. Hur kommer det sig egentligen att den här information ej
             är mer allmänt utbredd?
             <br /> <br /> Vi bestämde oss för att göra slag i sak och bli en
             positiv kraft i att öka förståelsen för ädelmetaller som
-            investering. Denna sida lanserades 2020 och vårt mål är att sprida
-            det goda ordet om världens äldsta valutor - guld och silver.
+            investering. Den här sidan lanserades 2020 och vårt mål är att
+            sprida det goda ordet om världens äldsta valutor - guld och silver.
           </p>
           <Link href="/guld">
             <button className={styles.bigButton}>
