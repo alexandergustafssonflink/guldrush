@@ -1,9 +1,9 @@
 .blogDiv {
-  margin: 0px 15px 0px 15px;
+  margin: 0px;
 }
 
 .blogPost {
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 30px;
   border-bottom: dotted 1px var(--blue);
   padding: 40px 40px 120px 40px;
@@ -72,6 +72,6 @@
 
 @media only screen and (max-width: 1000px) {
   .blogPost {
-    padding: 20px 10px 50px 10px;
+    padding: 5px 15px 50px 15px;
   }
 }
