@@ -253,6 +253,11 @@
   }
 }
 
+#nprogress .spinner-icon {
+  width: 60px !important;
+  height: 60px !important;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 999px) {
   .yellowBanner {
     display: none;
