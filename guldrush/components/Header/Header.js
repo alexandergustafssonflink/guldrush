@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <>
       <BurgerMenu />
-      <a className={styles.homeLink} href="/">
-        <div className={styles.mainHeader}>
-          <div className={styles.imgWrapper}>
-            <img className={styles.logo} src="/images/logo.png" alt="logo" />
-          </div>
+      {/* <a className={styles.homeLink} href="/"> */}
+      <div className={styles.mainHeader}>
+        <div className={styles.imgWrapper}>
+          <img className={styles.logo} src="/images/logo.png" alt="logo" />
         </div>
-      </a>
+      </div>
+      {/* </a> */}
     </>
   );
 };

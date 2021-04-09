@@ -8,6 +8,9 @@ const NavMenu = ({ products }) => {
   return (
     <div className={styles.navBar}>
       <ul className={styles.navList}>
+        <a href="/">
+          <li className={styles.navItem}>Hem</li>
+        </a>
         <a>
           <li>
             {" "}

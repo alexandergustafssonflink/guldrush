@@ -18,6 +18,9 @@ const BurgerMenu = () => {
   // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
   return (
     <Menu>
+      <a id="home" className="menu-item" href="/">
+        Hem
+      </a>
       <p className={styles.metalHeader} onClick={toggleGold}>
         Guld
       </p>
